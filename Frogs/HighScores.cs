@@ -12,7 +12,7 @@ namespace Frogs
     {
         Score[] scores;
 
-        HighScores() {
+        public HighScores() {
             Score[] scores = new Score[10];
         }
 
