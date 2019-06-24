@@ -15,6 +15,7 @@ namespace Frogs
         public Form1()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
     }
 }
