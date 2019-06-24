@@ -30,8 +30,8 @@ namespace Frogs
             if (file == null)
             {
                 SaveFileDialog dialog = new SaveFileDialog();
-                dialog.Filter = "Balls doc file (*.bll)|*.bll";
-                dialog.Title = "Save balls doc";
+                dialog.Filter = "Frogs game file (*.fro)|*.fro";
+                dialog.Title = "Save Frogs game file";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     file = dialog.FileName;
@@ -50,8 +50,8 @@ namespace Frogs
         private void LoadGameFile()
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Polygons balls file (*.bll)|*.bll";
-            dialog.Title = "Open balls doc file";
+            dialog.Filter = "Frogs game file (*.fro)|*.fro";
+            dialog.Title = "Open Frogs game file";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 file = dialog.FileName;

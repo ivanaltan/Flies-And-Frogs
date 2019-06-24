@@ -9,6 +9,7 @@ namespace Frogs
     class FliesCollection
     {
         public List<Fly> flies;
+        private Random random;
 
         public FliesCollection()
         {
@@ -17,6 +18,8 @@ namespace Frogs
 
         void AddFly() {
 
+            
+            
             
 
         }
