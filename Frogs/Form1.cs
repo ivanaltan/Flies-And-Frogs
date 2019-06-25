@@ -35,6 +35,7 @@ namespace Frogs
             logo.BackColor = Color.Transparent;
             logo.Image = logoimage;
             pause = false;
+            label1.Text = info.controls.pause.ToString();
         }
 
         private void SaveGameFile()
@@ -97,15 +98,29 @@ namespace Frogs
 
         private void btnControls_Click(object sender, EventArgs e)
         {
-            ControlsConfiguration form = new ControlsConfiguration(info.controls);
+
+            ControlsConfiguration form = new ControlsConfiguration(DeepClone(info.controls));
             DialogResult result = form.ShowDialog();
             if (result == DialogResult.OK)
-            {
                 info.controls = form.c;
-                form.Dispose();
-            }
 
-            else { form.Dispose(); return; }
+            else
+                return;  
         }
+
+
+        public static T DeepClone<T>(T obj)
+        {
+            using (var ms = new System.IO.MemoryStream())
+            {
+                var formatter = new BinaryFormatter();
+                formatter.Serialize(ms, obj);
+                ms.Position = 0;
+
+                return (T)formatter.Deserialize(ms);
+            }
+        }
+
+
     }
 }
