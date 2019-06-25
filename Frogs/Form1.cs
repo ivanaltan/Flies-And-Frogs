@@ -21,6 +21,10 @@ namespace Frogs
         public Timer frametimer;
         public Timer flyspawntimer;
 
+        Image logoimage;
+        Image background;
+        Bitmap bitmap;
+
         bool pause;
 
         public string file;
@@ -28,7 +32,10 @@ namespace Frogs
 
         public Form1()
         {
-            Image logoimage = Properties.Resources.logo;
+            logoimage = Properties.Resources.logo;
+            background = Properties.Resources.background;
+            bitmap = new Bitmap(background);
+
             InitializeComponent();
             DoubleBuffered = true;
             info = new GameFile();
@@ -38,7 +45,26 @@ namespace Frogs
         }
 
 
-        void StartGame() {
+        void StartGame(int time) {
+
+            Player1 player1;
+            Player2 player2;
+
+            player1 = new Player1();
+
+            if(players)
+            player2 = new Player2();
+
+            gametimer = new Timer();
+            gametimer.Interval = time*1000;
+
+            frametimer = new Timer();
+            frametimer.Interval = 16;
+
+            flyspawntimer = new Timer();
+            if (players)
+                flyspawntimer.Interval = 800;
+            else flyspawntimer.Interval = 1500;
 
 
         }
@@ -138,10 +164,21 @@ namespace Frogs
             NewGame form = new NewGame();
             DialogResult result = form.ShowDialog();
 
-            if(result==DialogResult.OK)
+            if (result == DialogResult.OK)
             {
-    //            StartGame(form.players, form.time);
+                players = form.players;
+                StartGame(form.time);
             }
+
+            else return;
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+
+            e.Graphics.Clear(Color.White);
+            e.Graphics.DrawImage(bitmap, new Point(0, 0));
+            
         }
     }
 }
