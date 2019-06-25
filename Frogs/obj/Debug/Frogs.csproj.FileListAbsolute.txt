@@ -12,3 +12,4 @@ D:\GitHub\Frogs_VP\Frogs\bin\Debug\Frogs.exe
 D:\GitHub\Frogs_VP\Frogs\bin\Debug\Frogs.pdb
 D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.exe
 D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.pdb
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.NewGame.resources

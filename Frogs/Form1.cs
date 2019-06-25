@@ -15,7 +15,7 @@ namespace Frogs
 {
     public partial class Form1 : Form
     {
-        public int players;
+        public bool players;
 
         public Timer gametimer;
         public Timer frametimer;
@@ -36,6 +36,13 @@ namespace Frogs
             logo.Image = logoimage;
             pause = false;
         }
+
+
+        void StartGame() {
+
+
+        }
+
 
         private void SaveGameFile()
         {
@@ -124,6 +131,17 @@ namespace Frogs
         {
             HighScoresList form = new HighScoresList(info.highscores);
             DialogResult result = form.ShowDialog();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            NewGame form = new NewGame();
+            DialogResult result = form.ShowDialog();
+
+            if(result==DialogResult.OK)
+            {
+    //            StartGame(form.players, form.time);
+            }
         }
     }
 }

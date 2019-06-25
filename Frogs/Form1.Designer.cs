@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnHighScores = new System.Windows.Forms.Button();
+            this.btnControls = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.btnHighScores = new System.Windows.Forms.Button();
-            this.btnControls = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -55,32 +55,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // logo
+            // btnSave
             // 
-            this.logo.ImageLocation = "";
-            this.logo.Location = new System.Drawing.Point(21, 12);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(100, 55);
-            this.logo.TabIndex = 2;
-            this.logo.TabStop = false;
+            this.btnSave.Location = new System.Drawing.Point(676, 12);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(112, 25);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save Game-File";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnPause
+            // btnLoad
             // 
-            this.btnPause.Location = new System.Drawing.Point(440, 42);
-            this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(112, 25);
-            this.btnPause.TabIndex = 1;
-            this.btnPause.Text = "Pause";
-            this.btnPause.UseVisualStyleBackColor = true;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(440, 12);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(112, 24);
-            this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "New Game";
-            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnLoad.Location = new System.Drawing.Point(676, 42);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(112, 24);
+            this.btnLoad.TabIndex = 5;
+            this.btnLoad.Text = "Load Game-FIle";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnHighScores
             // 
@@ -102,25 +95,35 @@
             this.btnControls.UseVisualStyleBackColor = true;
             this.btnControls.Click += new System.EventHandler(this.btnControls_Click);
             // 
-            // btnSave
+            // logo
             // 
-            this.btnSave.Location = new System.Drawing.Point(676, 12);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 25);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save Game-File";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.logo.ImageLocation = "";
+            this.logo.Location = new System.Drawing.Point(21, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(100, 55);
+            this.logo.TabIndex = 2;
+            this.logo.TabStop = false;
             // 
-            // btnLoad
+            // btnPause
             // 
-            this.btnLoad.Location = new System.Drawing.Point(676, 42);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(112, 24);
-            this.btnLoad.TabIndex = 5;
-            this.btnLoad.Text = "Load Game-FIle";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPause.Location = new System.Drawing.Point(397, 42);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(155, 25);
+            this.btnPause.TabIndex = 1;
+            this.btnPause.Text = "Pause";
+            this.btnPause.UseVisualStyleBackColor = true;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(397, 12);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(155, 24);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "New Game";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // Form1
             // 

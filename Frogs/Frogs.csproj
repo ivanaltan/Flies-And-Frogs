@@ -78,6 +78,12 @@
     <Compile Include="HighScoresList.Designer.cs">
       <DependentUpon>HighScoresList.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGame.Designer.cs">
+      <DependentUpon>NewGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewHighScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HighScoresList.resx">
       <DependentUpon>HighScoresList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGame.resx">
+      <DependentUpon>NewGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewHighScore.resx">
       <DependentUpon>NewHighScore.cs</DependentUpon>
