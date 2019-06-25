@@ -35,7 +35,6 @@ namespace Frogs
             logo.BackColor = Color.Transparent;
             logo.Image = logoimage;
             pause = false;
-            label1.Text = info.controls.pause.ToString();
         }
 
         private void SaveGameFile()
@@ -121,6 +120,10 @@ namespace Frogs
             }
         }
 
-
+        private void btnHighScores_Click(object sender, EventArgs e)
+        {
+            HighScoresList form = new HighScoresList(info.highscores);
+            DialogResult result = form.ShowDialog();
+        }
     }
 }

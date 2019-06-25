@@ -145,7 +145,7 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnExit.Location = new System.Drawing.Point(91, 419);
+            this.btnExit.Location = new System.Drawing.Point(91, 399);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(96, 23);
             this.btnExit.TabIndex = 12;
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 454);
+            this.ClientSize = new System.Drawing.Size(290, 441);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lbl10);
             this.Controls.Add(this.lbl9);

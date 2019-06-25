@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frogs
 {
-    class Score
+    public class Score
     {
         string name;
         int points;
@@ -19,6 +19,11 @@ namespace Frogs
 
         public int GetPoints() {
             return points;
+        }
+
+        public string GetName()
+        {
+            return name;
         }
 
 

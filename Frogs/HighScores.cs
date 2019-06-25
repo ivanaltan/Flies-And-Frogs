@@ -10,10 +10,13 @@ namespace Frogs
     [Serializable]
     public class HighScores
     {
-        Score[] scores;
+        public Score[] scores;
 
         public HighScores() {
-            Score[] scores = new Score[10];
+            scores = new Score[10];
+            Score s = new Score(0, "Unnamed");
+            for (int i = 0; i < 10; i++)
+                scores[i] = s;
         }
 
 
