@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblP2 = new System.Windows.Forms.Label();
+            this.lblP1 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnHighScores = new System.Windows.Forms.Button();
@@ -42,6 +48,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblP2);
+            this.groupBox1.Controls.Add(this.lblP1);
+            this.groupBox1.Controls.Add(this.lblTime);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnLoad);
             this.groupBox1.Controls.Add(this.btnHighScores);
@@ -55,11 +67,71 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // lblP2
+            // 
+            this.lblP2.AutoSize = true;
+            this.lblP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblP2.Location = new System.Drawing.Point(442, 42);
+            this.lblP2.Name = "lblP2";
+            this.lblP2.Size = new System.Drawing.Size(14, 15);
+            this.lblP2.TabIndex = 12;
+            this.lblP2.Text = "0";
+            // 
+            // lblP1
+            // 
+            this.lblP1.AutoSize = true;
+            this.lblP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblP1.Location = new System.Drawing.Point(311, 42);
+            this.lblP1.Name = "lblP1";
+            this.lblP1.Size = new System.Drawing.Size(14, 15);
+            this.lblP1.TabIndex = 11;
+            this.lblP1.Text = "0";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(182, 42);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(14, 15);
+            this.lblTime.TabIndex = 10;
+            this.lblTime.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(407, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Player2 points:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(275, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Player 1 points:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(165, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Time left:";
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(766, 11);
+            this.btnSave.Location = new System.Drawing.Point(809, 11);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(145, 25);
+            this.btnSave.Size = new System.Drawing.Size(102, 25);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save Game-File";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -67,9 +139,9 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(766, 42);
+            this.btnLoad.Location = new System.Drawing.Point(809, 42);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(145, 24);
+            this.btnLoad.Size = new System.Drawing.Size(102, 24);
             this.btnLoad.TabIndex = 5;
             this.btnLoad.Text = "Load Game-FIle";
             this.btnLoad.UseVisualStyleBackColor = true;
@@ -77,9 +149,9 @@
             // 
             // btnHighScores
             // 
-            this.btnHighScores.Location = new System.Drawing.Point(602, 11);
+            this.btnHighScores.Location = new System.Drawing.Point(701, 11);
             this.btnHighScores.Name = "btnHighScores";
-            this.btnHighScores.Size = new System.Drawing.Size(145, 25);
+            this.btnHighScores.Size = new System.Drawing.Size(102, 25);
             this.btnHighScores.TabIndex = 4;
             this.btnHighScores.Text = "High Scores";
             this.btnHighScores.UseVisualStyleBackColor = true;
@@ -87,9 +159,9 @@
             // 
             // btnControls
             // 
-            this.btnControls.Location = new System.Drawing.Point(602, 42);
+            this.btnControls.Location = new System.Drawing.Point(701, 42);
             this.btnControls.Name = "btnControls";
-            this.btnControls.Size = new System.Drawing.Size(145, 24);
+            this.btnControls.Size = new System.Drawing.Size(102, 24);
             this.btnControls.TabIndex = 3;
             this.btnControls.Text = "Controls";
             this.btnControls.UseVisualStyleBackColor = true;
@@ -107,19 +179,20 @@
             // btnPause
             // 
             this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPause.Location = new System.Drawing.Point(397, 42);
+            this.btnPause.Location = new System.Drawing.Point(529, 41);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(185, 25);
+            this.btnPause.Size = new System.Drawing.Size(166, 25);
             this.btnPause.TabIndex = 1;
             this.btnPause.Text = "Pause";
             this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(397, 12);
+            this.btnNew.Location = new System.Drawing.Point(529, 12);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(185, 24);
+            this.btnNew.Size = new System.Drawing.Size(166, 24);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "New Game";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -131,10 +204,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 524);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -150,6 +225,12 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnHighScores;
         private System.Windows.Forms.Button btnControls;
+        private System.Windows.Forms.Label lblP2;
+        private System.Windows.Forms.Label lblP1;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

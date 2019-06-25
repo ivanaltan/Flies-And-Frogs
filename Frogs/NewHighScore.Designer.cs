@@ -103,6 +103,7 @@
             this.Controls.Add(this.lblPosition);
             this.Controls.Add(this.lblPoints);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NewHighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);

@@ -6,3 +6,5 @@ www.pixnio.com/flora-plants/flowers/water-lily-lotus-flower/nature-lotus-leaf-fl
 
 функција за DeepCopy од www.stackoverflow.com/a/129395
 
+www.opengameart.org/content/animated-frog
+

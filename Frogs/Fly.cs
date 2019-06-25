@@ -16,12 +16,14 @@ namespace Frogs
 
         public int speed;
         public int amplitude;
+        public int frequency;
+        public bool direction;
         public int center;
         public Point position;
         public bool wings;
         public bool eaten;
         public int points;
-        public bool direction;
+        
         
 
         public Fly(int speed, int amplitude, int center, bool wings, bool direction)
