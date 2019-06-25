@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace Frogs
 {
     [Serializable]
-    class Controls
+    public class Controls
     {
         public Keys pause;
         public Keys newgame;
@@ -22,11 +22,6 @@ namespace Frogs
         public Keys P2right;
         public Keys P2jump;
         public Keys P2tongue;
-
-        public Keys P3left;
-        public Keys P3right;
-        public Keys P3jump;
-        public Keys P3tongue;
 
         public Controls()
         {
@@ -42,11 +37,6 @@ namespace Frogs
             P2right = Keys.G;
             P2jump = Keys.Q;
             P2tongue = Keys.W;
-
-            P3left = Keys.NumPad4;
-            P3right = Keys.NumPad6;
-            P3jump = Keys.NumPad8;
-            P3tongue = Keys.NumPad9;
         }
 
 

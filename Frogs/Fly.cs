@@ -9,23 +9,29 @@ namespace Frogs
 {
     abstract class Fly
     {
-        int speed;
-        int amplitude;
-        int center;
-        Point position;
-        bool wings;
-        bool eaten;
-        int points;
+        public static int NormalFlyPoints = 100;
+        public static int SpanishFlyPoints = -150;
+        public static int GoldenFlyPoints = 300;
+        public static int DragonFlyPoints = 150;
+
+        public int speed;
+        public int amplitude;
+        public int center;
+        public Point position;
+        public bool wings;
+        public bool eaten;
+        public int points;
+        public bool direction;
         
 
-        public Fly(int speed, int amplitude, int center, Point position, bool wings)
+        public Fly(int speed, int amplitude, int center, bool wings, bool direction)
         {
             this.speed = speed;
             this.amplitude = amplitude;
             this.center = center;
-            this.position = position;
             this.wings = wings;
             this.eaten = false;
+            this.direction = direction;
         }
 
         void MoveLeft()

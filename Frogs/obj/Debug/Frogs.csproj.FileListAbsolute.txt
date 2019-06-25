@@ -1,0 +1,9 @@
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.csprojAssemblyReference.cache
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.ControlsConfiguration.resources
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.Form1.resources
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.GameEnd.resources
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.HighScoresList.resources
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.NewHighScore.resources
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.Properties.Resources.resources
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.csproj.GenerateResource.cache
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.csproj.CoreCompileInputs.cache

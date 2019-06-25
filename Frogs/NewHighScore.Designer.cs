@@ -84,6 +84,7 @@
             // 
             // btn
             // 
+            this.btn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn.Location = new System.Drawing.Point(49, 167);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(128, 23);

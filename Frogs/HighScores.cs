@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Frogs
 {
     [Serializable]
-    class HighScores
+    public class HighScores
     {
         Score[] scores;
 

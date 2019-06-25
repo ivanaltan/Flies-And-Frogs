@@ -19,11 +19,17 @@ namespace Frogs
         {
             InitializeComponent();
             DoubleBuffered = true;
-            GameFile info = new GameFile();
+            info = new GameFile();
         }
 
-        string file;
-        GameFile info;
+        public int players;
+
+        public Timer gametimer;
+        public Timer frametimer;
+        public Timer flyspawntimer;
+
+        public string file;
+        public GameFile info;
 
         private void SaveGameFile()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Frogs
 {
     [Serializable]
-    class GameFile
+    public class GameFile
     {
         public HighScores highscores;
         public Controls controls;
