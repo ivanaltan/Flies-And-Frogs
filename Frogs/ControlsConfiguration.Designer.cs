@@ -205,6 +205,7 @@
             this.tbNew.TabIndex = 65;
             this.tbNew.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbNew.Enter += new System.EventHandler(this.tbNew_Enter);
+            this.tbNew.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNew_KeyDown);
             this.tbNew.Leave += new System.EventHandler(this.tb_Leave);
             // 
             // tbP1Left
@@ -307,7 +308,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Abort;
             this.btnCancel.Location = new System.Drawing.Point(145, 518);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 23);

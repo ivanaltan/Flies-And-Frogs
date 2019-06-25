@@ -15,21 +15,27 @@ namespace Frogs
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-            DoubleBuffered = true;
-            info = new GameFile();
-        }
-
         public int players;
 
         public Timer gametimer;
         public Timer frametimer;
         public Timer flyspawntimer;
 
+        bool pause;
+
         public string file;
         public GameFile info;
+
+        public Form1()
+        {
+            Image logoimage = Properties.Resources.logo;
+            InitializeComponent();
+            DoubleBuffered = true;
+            info = new GameFile();
+            logo.BackColor = Color.Transparent;
+            logo.Image = logoimage;
+            pause = false;
+        }
 
         private void SaveGameFile()
         {
@@ -79,23 +85,27 @@ namespace Frogs
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveGameFile();
+        }
 
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadGameFile();
+        }
 
+        private void btnControls_Click(object sender, EventArgs e)
+        {
+            ControlsConfiguration form = new ControlsConfiguration(info.controls);
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                info.controls = form.c;
+                form.Dispose();
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            else { form.Dispose(); return; }
+        }
     }
 }

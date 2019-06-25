@@ -29,38 +29,97 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnHighScores = new System.Windows.Forms.Button();
+            this.btnControls = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.btnLoad);
+            this.groupBox1.Controls.Add(this.btnHighScores);
+            this.groupBox1.Controls.Add(this.btnControls);
+            this.groupBox1.Controls.Add(this.logo);
+            this.groupBox1.Controls.Add(this.btnPause);
+            this.groupBox1.Controls.Add(this.btnNew);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(801, 64);
+            this.groupBox1.Size = new System.Drawing.Size(801, 73);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // button1
+            // logo
             // 
-            this.button1.Location = new System.Drawing.Point(117, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.logo.ImageLocation = "";
+            this.logo.Location = new System.Drawing.Point(21, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(100, 55);
+            this.logo.TabIndex = 2;
+            this.logo.TabStop = false;
             // 
-            // button2
+            // btnPause
             // 
-            this.button2.Location = new System.Drawing.Point(233, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPause.Location = new System.Drawing.Point(440, 42);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(112, 25);
+            this.btnPause.TabIndex = 1;
+            this.btnPause.Text = "Pause";
+            this.btnPause.UseVisualStyleBackColor = true;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(440, 12);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(112, 24);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "New Game";
+            this.btnNew.UseVisualStyleBackColor = true;
+            // 
+            // btnHighScores
+            // 
+            this.btnHighScores.Location = new System.Drawing.Point(558, 12);
+            this.btnHighScores.Name = "btnHighScores";
+            this.btnHighScores.Size = new System.Drawing.Size(112, 25);
+            this.btnHighScores.TabIndex = 4;
+            this.btnHighScores.Text = "High Scores";
+            this.btnHighScores.UseVisualStyleBackColor = true;
+            // 
+            // btnControls
+            // 
+            this.btnControls.Location = new System.Drawing.Point(558, 42);
+            this.btnControls.Name = "btnControls";
+            this.btnControls.Size = new System.Drawing.Size(112, 24);
+            this.btnControls.TabIndex = 3;
+            this.btnControls.Text = "Controls";
+            this.btnControls.UseVisualStyleBackColor = true;
+            this.btnControls.Click += new System.EventHandler(this.btnControls_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(676, 12);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(112, 25);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save Game-File";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(676, 42);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(112, 24);
+            this.btnLoad.TabIndex = 5;
+            this.btnLoad.Text = "Load Game-FIle";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // Form1
             // 
@@ -71,6 +130,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -78,8 +138,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnHighScores;
+        private System.Windows.Forms.Button btnControls;
     }
 }
 

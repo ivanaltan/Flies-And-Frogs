@@ -7,3 +7,8 @@ D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.NewHighScore.resources
 D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.Properties.Resources.resources
 D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.csproj.GenerateResource.cache
 D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.csproj.CoreCompileInputs.cache
+D:\GitHub\Frogs_VP\Frogs\bin\Debug\Frogs.exe.config
+D:\GitHub\Frogs_VP\Frogs\bin\Debug\Frogs.exe
+D:\GitHub\Frogs_VP\Frogs\bin\Debug\Frogs.pdb
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.exe
+D:\GitHub\Frogs_VP\Frogs\obj\Debug\Frogs.pdb

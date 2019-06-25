@@ -12,11 +12,12 @@ namespace Frogs
 {
     public partial class ControlsConfiguration : Form
     {
-        Controls c;
+        public Controls c;
         public ControlsConfiguration(Controls c)
         {
             InitializeComponent();
             this.c = c;
+            TextBoxes();
 
         }
 
@@ -43,7 +44,6 @@ namespace Frogs
         private void tbPause_KeyDown(object sender, KeyEventArgs e)
         {
             c.pause = e.KeyCode;
-            TextBoxes();
         }
 
         private void tbPause_Enter(object sender, EventArgs e)
@@ -54,7 +54,6 @@ namespace Frogs
         private void tbNew_KeyDown(object sender, KeyEventArgs e)
         {
             c.newgame = e.KeyCode;
-            TextBoxes();
         }
 
         private void tbNew_Enter(object sender, EventArgs e)
@@ -65,7 +64,6 @@ namespace Frogs
         private void tbP1Left_KeyDown(object sender, KeyEventArgs e)
         {
             c.P1left = e.KeyCode;
-            TextBoxes();
         }
 
         private void tbP1Left_Enter(object sender, EventArgs e)
@@ -100,13 +98,13 @@ namespace Frogs
 
         private void tbP1Tongue_KeyDown(object sender, KeyEventArgs e)
         {
-            tbP2Tongue.Text = "";
+            c.P1tongue = e.KeyCode;
         }
 
         private void tbP2Left_KeyDown(object sender, KeyEventArgs e)
         {
             c.P2left = e.KeyCode;
-            TextBoxes();
+            
         }
 
         private void tbP2Left_Enter(object sender, EventArgs e)
@@ -141,7 +139,7 @@ namespace Frogs
 
         private void tbP2Tongue_KeyDown(object sender, KeyEventArgs e)
         {
-            tbP2Tongue.Text = "";
+            c.P2tongue = e.KeyCode;
         }
     }
 }
