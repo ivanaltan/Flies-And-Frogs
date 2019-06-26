@@ -22,6 +22,7 @@ namespace Frogs
 
         Player1 player1;
         Player2 player2;
+        Player3 player3;
 
         Image logoimage;
         Image background;
@@ -47,15 +48,17 @@ namespace Frogs
             logo.Image = logoimage;
             playing = false;
             pause = false;
+            btnPause.Enabled = false;
         }
 
 
         void StartGame(int t) {
 
+            btnPause.Enabled = true;
             playing = true;
             time = t;
 
-            seconds = 0;
+            seconds = 2;
 
             player1 = new Player1();
 
@@ -96,12 +99,48 @@ namespace Frogs
 
         private void gametimer_Tick(object sender, System.EventArgs e)
         {
-            frametimer.Dispose();
-            flyspawntimer.Dispose();
-            secondtimer.Dispose();
-            playing = false;
-            gametimer.Dispose();
-            Invalidate(true);
+            Form form;
+            int position;
+
+            EndGame();
+
+            if (!players)
+            {
+                position = info.highscores.Check(player1.points);
+
+                if (position>10)
+                {
+                    form = new NotHighScore(player1.points);
+                    form.ShowDialog();
+                }
+
+                else
+                {
+                    NewHighScore formnhs = new NewHighScore(player1.points, position);
+                    DialogResult result = formnhs.ShowDialog();
+                    if (result == DialogResult.OK)
+                        info.highscores.Add(player1.points, formnhs.name, position);
+                    else
+                        info.highscores.Add(player1.points, "Unnamed", position);
+                }
+
+                form = new HighScoresList(info.highscores);
+                form.ShowDialog();
+            }
+
+            else
+            {
+                if (player1.points > player2.points) MessageBox.Show("Player 1 wins!");
+                else if (player1.points < player2.points) MessageBox.Show("Player 2 wins!");
+                else MessageBox.Show("Draw!");
+            }
+
+            form = new GameEnd();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                NewGame();
+            }
+            else Close();
 
         }
 
@@ -127,7 +166,7 @@ namespace Frogs
             if (file == null)
             {
                 SaveFileDialog dialog = new SaveFileDialog();
-                dialog.Filter = "Frogs game file (*.fro)|*.fro";
+                dialog.Filter = "Frogs game file (*.fgf)|*.fgf";
                 dialog.Title = "Save Frogs game file";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
@@ -147,7 +186,7 @@ namespace Frogs
         private void LoadGameFile()
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Frogs game file (*.fro)|*.fro";
+            dialog.Filter = "Frogs game file (*.fgf)|*.fgf";
             dialog.Title = "Open Frogs game file";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -208,21 +247,12 @@ namespace Frogs
         private void btnHighScores_Click(object sender, EventArgs e)
         {
             HighScoresList form = new HighScoresList(info.highscores);
-            DialogResult result = form.ShowDialog();
+            form.ShowDialog();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            NewGame form = new NewGame();
-            DialogResult result = form.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                players = form.players;
-                StartGame(form.time);
-            }
-
-            else return;
+            NewGame();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -251,18 +281,32 @@ namespace Frogs
             if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P1tongue)))
                 player1.Tongue();
 
-            if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2right)))
-                player2.Move(true);
-            else if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2left)))
-                player2.Move(false);
-            if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2jump)))
-                player2.Jump();
-            if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P1tongue)))
-                player2.Tongue();
+            if (players)
+            {
+                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2right)))
+                    player2.Move(true);
+                else if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2left)))
+                    player2.Move(false);
+                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2jump)))
+                    player2.Jump();
+                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P1tongue)))
+                    player2.Tongue();
+            }
+
+            if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.pause)))
+                Pause();
+            if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.newgame)))
+                NewGame();
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
+            Pause();
+        }
+
+
+        private void Pause() {
+
             if (!playing) return;
 
             if (!pause)
@@ -288,5 +332,36 @@ namespace Frogs
             }
 
         }
+
+        private void NewGame()
+        {
+            if (playing && !pause) Pause();
+
+            NewGame form = new NewGame();
+            DialogResult result = form.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                if (playing)
+                    EndGame();
+                
+                players = form.players;
+                StartGame(form.time);
+            }
+
+            else return;
+        }
+
+        private void EndGame()
+        {
+            frametimer.Dispose();
+            flyspawntimer.Dispose();
+            secondtimer.Dispose();
+            btnPause.Enabled = false;
+            playing = false;
+            gametimer.Dispose();
+            Invalidate(true);
+        }
+
     }
 }

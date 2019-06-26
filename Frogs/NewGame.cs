@@ -46,7 +46,7 @@ namespace Frogs
         private void btnStart_Click(object sender, EventArgs e)
         {
             time = int.Parse(tbTime.Text);
-            if (time < 10) time = 90;
+            if (time < 10) time = 10;
         }
 
         private void tbTime_KeyPress(object sender, KeyPressEventArgs e)

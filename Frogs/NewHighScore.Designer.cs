@@ -32,7 +32,7 @@
             this.lblPoints = new System.Windows.Forms.Label();
             this.lblPosition = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -73,14 +73,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Your name:";
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 115);
-            this.textBox1.MaxLength = 16;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "Unnamed";
+            this.tbName.Location = new System.Drawing.Point(113, 115);
+            this.tbName.MaxLength = 16;
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(100, 20);
+            this.tbName.TabIndex = 4;
+            this.tbName.Text = "Unnamed";
+            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // btn
             // 
@@ -98,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(241, 207);
             this.Controls.Add(this.btn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPosition);
             this.Controls.Add(this.lblPoints);
@@ -117,7 +118,7 @@
         private System.Windows.Forms.Label lblPoints;
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Button btn;
     }
 }

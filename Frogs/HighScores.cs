@@ -20,12 +20,12 @@ namespace Frogs
         }
 
 
-        Score GetScore(int index)
+        public Score GetScore(int index)
         {
             return scores[index];
         }
 
-        void Add(int score, string name, int position)
+        public void Add(int score, string name, int position)
         {
             position--;
             Score newscore = new Score(score,name);
@@ -52,7 +52,7 @@ namespace Frogs
 
         }
 
-        int Check(int points)
+        public int Check(int points)
         {
             int i = 0;
 
