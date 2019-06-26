@@ -13,7 +13,7 @@ namespace Frogs
 
         public Player2() : base()
         {
-            p = new Point(750, 400);
+            p = new Point(750, ground);
 
             direction = false;
             img1 = Properties.Resources.frog2_1;

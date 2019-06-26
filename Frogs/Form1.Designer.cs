@@ -42,12 +42,16 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblP2);
             this.groupBox1.Controls.Add(this.lblP1);
             this.groupBox1.Controls.Add(this.lblTime);
@@ -63,7 +67,7 @@
             this.groupBox1.Controls.Add(this.btnNew);
             this.groupBox1.Location = new System.Drawing.Point(0, -5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(953, 75);
+            this.groupBox1.Size = new System.Drawing.Size(1090, 75);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -71,7 +75,7 @@
             // 
             this.lblP2.AutoSize = true;
             this.lblP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblP2.Location = new System.Drawing.Point(442, 42);
+            this.lblP2.Location = new System.Drawing.Point(395, 45);
             this.lblP2.Name = "lblP2";
             this.lblP2.Size = new System.Drawing.Size(14, 15);
             this.lblP2.TabIndex = 12;
@@ -81,7 +85,7 @@
             // 
             this.lblP1.AutoSize = true;
             this.lblP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblP1.Location = new System.Drawing.Point(311, 42);
+            this.lblP1.Location = new System.Drawing.Point(281, 45);
             this.lblP1.Name = "lblP1";
             this.lblP1.Size = new System.Drawing.Size(14, 15);
             this.lblP1.TabIndex = 11;
@@ -91,7 +95,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(182, 42);
+            this.lblTime.Location = new System.Drawing.Point(189, 45);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(14, 15);
             this.lblTime.TabIndex = 10;
@@ -101,17 +105,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(407, 15);
+            this.label3.Location = new System.Drawing.Point(360, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 15);
+            this.label3.Size = new System.Drawing.Size(90, 15);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Player2 points:";
+            this.label3.Text = "Player 2 points:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 15);
+            this.label2.Location = new System.Drawing.Point(246, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 15);
             this.label2.TabIndex = 8;
@@ -129,7 +133,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(809, 11);
+            this.btnSave.Location = new System.Drawing.Point(924, 11);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 25);
             this.btnSave.TabIndex = 6;
@@ -139,7 +143,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(809, 42);
+            this.btnLoad.Location = new System.Drawing.Point(924, 40);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(102, 24);
             this.btnLoad.TabIndex = 5;
@@ -149,7 +153,7 @@
             // 
             // btnHighScores
             // 
-            this.btnHighScores.Location = new System.Drawing.Point(701, 11);
+            this.btnHighScores.Location = new System.Drawing.Point(799, 11);
             this.btnHighScores.Name = "btnHighScores";
             this.btnHighScores.Size = new System.Drawing.Size(102, 25);
             this.btnHighScores.TabIndex = 4;
@@ -159,7 +163,7 @@
             // 
             // btnControls
             // 
-            this.btnControls.Location = new System.Drawing.Point(701, 42);
+            this.btnControls.Location = new System.Drawing.Point(799, 40);
             this.btnControls.Name = "btnControls";
             this.btnControls.Size = new System.Drawing.Size(102, 24);
             this.btnControls.TabIndex = 3;
@@ -179,7 +183,7 @@
             // btnPause
             // 
             this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPause.Location = new System.Drawing.Point(529, 41);
+            this.btnPause.Location = new System.Drawing.Point(610, 40);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(166, 25);
             this.btnPause.TabIndex = 1;
@@ -190,7 +194,7 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(529, 12);
+            this.btnNew.Location = new System.Drawing.Point(610, 11);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(166, 24);
             this.btnNew.TabIndex = 0;
@@ -198,11 +202,31 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(510, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 15);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(474, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 15);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Player 3 points:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 524);
+            this.ClientSize = new System.Drawing.Size(1059, 563);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -231,6 +255,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

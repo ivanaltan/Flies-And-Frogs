@@ -11,7 +11,7 @@ namespace Frogs
     {
         public Player3() : base()
         {
-            p = new Point(450, 400);
+            p = new Point(450, ground);
 
             Random r = new Random();
             direction = (r.Next(0,1)!=0);

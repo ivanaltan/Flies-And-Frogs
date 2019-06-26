@@ -13,6 +13,9 @@ namespace Frogs
         public Point p;
         public bool direction;
 
+        public static int jumpheight = 180;
+        public static int ground = 430;
+
         public bool moving;
         public bool jumping;
         public bool img;
@@ -66,6 +69,8 @@ namespace Frogs
         public void Jump()
         {
             if (jumping && !powerup) return;
+            if (p.X <= 38 && !direction) return;
+            if (p.X >= 967 && direction) return;
 
             jumping = true;
             top = false;
@@ -89,6 +94,9 @@ namespace Frogs
 
             else
             {
+                if (p.X <= 35 && !direction) return;
+                if (p.X >= 970 && direction) return;
+
                 if (direction) p.X += 5;
                 else p.X -= 5;
 
@@ -101,13 +109,20 @@ namespace Frogs
         {
             if (jumping)
             {
-                if (!top && p.Y <= 150)
+
+                if(p.X<=35 || p.X>=970)
+                {
+                    if (direction) direction = false;
+                    else direction = true;
+                }
+
+                if (!top && p.Y <= jumpheight)
                     top = true;
 
-                if (top && p.Y >= 400)
+                if (top && p.Y >= ground)
                 {
                     jumping = false;
-                    p.Y = 400;
+                    p.Y = ground;
                     return;
                 }
 

@@ -166,9 +166,6 @@
     <None Include="Resources\frog2.jump.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\frog1.2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\frog3.jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
