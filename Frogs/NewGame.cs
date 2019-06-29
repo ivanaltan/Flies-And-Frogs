@@ -12,13 +12,13 @@ namespace Frogs
 {
     public partial class NewGame : Form
     {
-        public bool players;
+        public int players;
         public int time;
         private String memtime;
         public NewGame()
         {
             InitializeComponent();
-            players = false;
+            players = 0;
             time = 90;
             memtime = "90";
             tbTime.Text = "90";
@@ -29,15 +29,22 @@ namespace Frogs
         {
             if(radio1P.Checked==true)
             {
-                players = false;
+                players = 1;
                 memtime = tbTime.Text;
                 tbTime.Text = "90";
                 tbTime.Enabled = false;
             }
 
+            else if (radio2P.Checked==true)
+            {
+                players = 2;
+                tbTime.Text = memtime;
+                tbTime.Enabled = true;
+            }
+
             else
             {
-                players = true;
+                players = 3;
                 tbTime.Text = memtime;
                 tbTime.Enabled = true;
             }

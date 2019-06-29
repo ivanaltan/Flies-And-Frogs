@@ -9,13 +9,13 @@ namespace Frogs
 {
     class Player3 : Frog
     {
-        public Player3() : base()
+        public Player3(ref FliesCollection flies) : base(ref flies)
         {
             p = new Point(450, ground);
 
             Random r = new Random();
             direction = (r.Next(0,1)!=0);
-
+            id = 2;
             img1 = Properties.Resources.frog3_1;
             img2 = Properties.Resources.frog3_2;
             imgjump = Properties.Resources.frog3_jump;

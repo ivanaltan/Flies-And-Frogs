@@ -9,9 +9,10 @@ namespace Frogs
 {
     class NormalFly : Fly
     {
-        public NormalFly(int speed, int amplitude, int center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
+        public NormalFly(int speed, int amplitude, Point center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
         {
             points = Fly.NormalFlyPoints;
+            radius = Fly.NormalFlyRadius;
         }
 
     }

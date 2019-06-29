@@ -9,9 +9,10 @@ namespace Frogs
 {
     class DragonFly : Fly
     {
-        public DragonFly(int speed, int amplitude, int center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
+        public DragonFly(int speed, int amplitude, Point center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
         {
             points = Fly.DragonFlyPoints;
+            radius = Fly.DragonFlyRadius;
         }
 
 

@@ -10,9 +10,10 @@ namespace Frogs
     class SpanishFly : Fly
     {
 
-        public SpanishFly(int speed, int amplitude, int center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
+        public SpanishFly(int speed, int amplitude, Point center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
         {
             points = Fly.SpanishFlyPoints;
+            radius = Fly.SpanishFlyRadius;
         }
 
     }

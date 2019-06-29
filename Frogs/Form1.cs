@@ -10,15 +10,16 @@ namespace Frogs
 {
     public partial class Form1 : Form
     {
-        public bool players;
+        public int players;
 
         public Timer gametimer;
         public Timer frametimer;
         public Timer flyspawntimer;
         public Timer secondtimer;
 
-        int seconds;
-        int time;
+        public int seconds;
+        public int time;
+
 
         Player1 player1;
         Player2 player2;
@@ -33,6 +34,7 @@ namespace Frogs
 
         public string file;
         public GameFile info;
+        public FliesCollection flies;
 
         public Form1()
         {
@@ -60,10 +62,14 @@ namespace Frogs
 
             seconds = 2;
 
-            player1 = new Player1();
+            flies = new FliesCollection();
 
-            if(players)
-            player2 = new Player2();
+            player1 = new Player1(ref flies);
+
+            if(players>1)
+            player2 = new Player2(ref flies);
+            if (players == 3)
+                player3 = new Player3(ref flies);
 
             secondtimer = new Timer();
             secondtimer.Interval = 1000;
@@ -75,7 +81,7 @@ namespace Frogs
             frametimer.Interval = 16;
 
             flyspawntimer = new Timer();
-            if (players)
+            if (players==1)
                 flyspawntimer.Interval = 800;
             else flyspawntimer.Interval = 1500;
 
@@ -104,11 +110,11 @@ namespace Frogs
 
             EndGame();
 
-            if (!players)
+            if (players == 1)
             {
                 position = info.highscores.Check(player1.points);
 
-                if (position>10)
+                if (position > 10)
                 {
                     form = new NotHighScore(player1.points);
                     form.ShowDialog();
@@ -128,11 +134,27 @@ namespace Frogs
                 form.ShowDialog();
             }
 
+            else if (players == 2)
+            {
+                if (player1.points > player2.points)
+                    MessageBox.Show("Player 1 wins!");
+                else if (player1.points < player2.points)
+                    MessageBox.Show("Player 2 wins!");
+                else
+                    MessageBox.Show("Draw!");
+            }
+
             else
             {
-                if (player1.points > player2.points) MessageBox.Show("Player 1 wins!");
-                else if (player1.points < player2.points) MessageBox.Show("Player 2 wins!");
-                else MessageBox.Show("Draw!");
+                if(player1.points>player2.points && player1.points>player3.points)
+                    MessageBox.Show("Player 1 wins!");
+                else if(player2.points>player1.points && player2.points>player3.points)
+                    MessageBox.Show("Player 2 wins!");
+                else if (player3.points > player1.points && player3.points > player2.points)
+                    MessageBox.Show("Player 3 wins!");
+                else
+                    MessageBox.Show("Draw!");
+
             }
 
             form = new GameEnd();
@@ -148,10 +170,23 @@ namespace Frogs
         private void frametimer_Tick(object sender, System.EventArgs e)
         {
             CheckInputs();
-            player1.CheckJump();
+            player1.UpdateJump();
+            player1.UpdateTongue();
+            lblP1.Text = player1.points.ToString();
 
-            if(players)
-            player2.CheckJump();
+            if (players>1)
+            {
+                player2.UpdateJump();
+                player2.UpdateTongue();
+                lblP2.Text = player2.points.ToString();
+            }
+
+            if(players==3)
+            {
+                player3.UpdateJump();
+                player3.UpdateTongue();
+                lblP3.Text = player3.points.ToString();
+            }
 
             Invalidate(true);
         }
@@ -265,7 +300,8 @@ namespace Frogs
             if (playing)
             {
                 player1.Draw(e.Graphics);
-                if (players) player2.Draw(e.Graphics);
+                if (players>1) player2.Draw(e.Graphics);
+                if (players == 3) player3.Draw(e.Graphics);
             }
             
         }
@@ -281,7 +317,7 @@ namespace Frogs
             if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P1tongue)))
                 player1.Tongue();
 
-            if (players)
+            if (players>1)
             {
                 if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2right)))
                     player2.Move(true);
@@ -293,10 +329,18 @@ namespace Frogs
                     player2.Tongue();
             }
 
-            if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.pause)))
-                Pause();
-            if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.newgame)))
-                NewGame();
+            if (players == 3)
+            {
+                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P3right)))
+                    player3.Move(true);
+                else if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P3left)))
+                    player3.Move(false);
+                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P3jump)))
+                    player3.Jump();
+                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P3tongue)))
+                    player3.Tongue();
+            }
+
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -363,5 +407,12 @@ namespace Frogs
             Invalidate(true);
         }
 
+        private void Form1_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == info.controls.pause)
+                Pause();
+            if (e.KeyCode == info.controls.newgame)
+                NewGame();
+        }
     }
 }

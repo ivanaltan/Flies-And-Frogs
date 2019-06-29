@@ -25,6 +25,11 @@ namespace Frogs
         public Keys P2jump;
         public Keys P2tongue;
 
+        public Keys P3left;
+        public Keys P3right;
+        public Keys P3jump;
+        public Keys P3tongue;
+
         public Controls()
         {
             pause = Keys.P;
@@ -39,6 +44,11 @@ namespace Frogs
             P2right = Keys.G;
             P2jump = Keys.Q;
             P2tongue = Keys.W;
+
+            P3left = Keys.NumPad4;
+            P3right = Keys.NumPad6;
+            P3jump = Keys.NumPad5;
+            P3tongue = Keys.NumPad0;
         }
 
 

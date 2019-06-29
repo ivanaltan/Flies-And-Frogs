@@ -32,6 +32,10 @@ namespace Frogs
             tbP2Right.Text = c.P2right.ToString();
             tbP2Jump.Text = c.P2jump.ToString();
             tbP2Tongue.Text = c.P2tongue.ToString();
+            tbP3Left.Text = c.P3left.ToString();
+            tbP3Right.Text = c.P3right.ToString();
+            tbP3Jump.Text = c.P3jump.ToString();
+            tbP3Tongue.Text = c.P3tongue.ToString();
         }
 
 
@@ -140,6 +144,47 @@ namespace Frogs
         private void tbP2Tongue_KeyDown(object sender, KeyEventArgs e)
         {
             c.P2tongue = e.KeyCode;
+        }
+
+        private void tbP3Left_KeyDown(object sender, KeyEventArgs e)
+        {
+            c.P3left = e.KeyCode;
+
+        }
+
+        private void tbP3Left_Enter(object sender, EventArgs e)
+        {
+            tbP3Left.Text = "";
+        }
+
+        private void tbP3Right_KeyDown(object sender, KeyEventArgs e)
+        {
+            c.P3right = e.KeyCode;
+        }
+
+        private void tbP3Right_Enter(object sender, EventArgs e)
+        {
+            tbP3Right.Text = "";
+        }
+
+        private void tbP3Jump_KeyDown(object sender, KeyEventArgs e)
+        {
+            c.P3jump = e.KeyCode;
+        }
+
+        private void tbP3Jump_Enter(object sender, EventArgs e)
+        {
+            tbP3Jump.Text = "";
+        }
+
+        private void tbP3Tongue_Enter(object sender, EventArgs e)
+        {
+            tbP3Tongue.Text = "";
+        }
+
+        private void tbP3Tongue_KeyDown(object sender, KeyEventArgs e)
+        {
+            c.P3tongue = e.KeyCode;
         }
     }
 }

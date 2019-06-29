@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Frogs
 {
-    class FliesCollection
+    public class FliesCollection
     {
         public List<Fly> flies;
         private Random random;

@@ -9,20 +9,22 @@ namespace Frogs
 {
     public class Frog
     {
-        public int tongue;
+        public int tonguestate;
         public Point p;
         public bool direction;
 
-        public static int jumpheight = 180;
+        public bool jumping;
+
+        public static int jumpheight = 150;
         public static int ground = 430;
 
         public bool moving;
-        public bool jumping;
         public bool img;
         public bool top;
         public bool powerup;
 
         public int points;
+        public int id;
 
         public Image img1;
         public Image img2;
@@ -31,9 +33,15 @@ namespace Frogs
         public Image img2F;
         public Image imgjumpF;
 
-        public Frog()
+        public Circle[] tongue;
+
+        public FliesCollection flies;
+
+        public Frog(ref FliesCollection flies)
         {
+            this.flies = flies;
             points = 0;
+            tonguestate = 0;
             powerup = false;
             moving = false;
             jumping = false;
@@ -74,13 +82,6 @@ namespace Frogs
 
             jumping = true;
             top = false;
-        }
-
-        public void Tongue()
-        {
-
-
-
 
         }
 
@@ -105,7 +106,8 @@ namespace Frogs
 
         }
 
-        public void CheckJump()
+
+        public void UpdateJump()
         {
             if (jumping)
             {
@@ -128,28 +130,65 @@ namespace Frogs
 
                 else if (!top && direction)
                 {
-                    p.X += 3;
+                    p.X += 2;
                     p.Y -= 5;
                 }
 
                 else if (!top && !direction)
                 {
-                    p.X -= 3;
+                    p.X -= 2;
                     p.Y -= 5;
                 }
 
                 else if (top && direction)
                 {
-                    p.X += 3;
+                    p.X += 2;
                     p.Y += 5;
                 }
 
                 else if (top && !direction)
                 {
-                    p.X -= 3;
+                    p.X -= 2;
                     p.Y += 5;
                 }
             }
+        }
+
+        public void Tongue()
+        {
+            if (tonguestate == 0)
+            {
+                tonguestate = 1;
+                tongue = new Circle[20];
+            }
+        }
+
+        public void UpdateTongue()
+        {
+
+            //switch (tonguestate)
+            //{
+            //    case 0:
+            //        return;
+            //    case 1:
+            //        tongue[0] = new Circle(new Point(p.X+30,p.Y+3));
+            //        CheckCollisions();
+            //    case 2:
+
+
+
+
+            //}
+
+        }
+
+        public void CheckCollisions()
+        {
+            foreach (Circle c in tongue)
+            {
+                points+=c.CheckCollisions(flies.flies, id);
+            }
+
         }
 
     }

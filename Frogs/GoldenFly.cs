@@ -10,9 +10,10 @@ namespace Frogs
     class GoldenFly : Fly
     {
 
-        public GoldenFly(int speed, int amplitude, int center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
+        public GoldenFly(int speed, int amplitude, Point center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
         {
             points = Fly.GoldenFlyPoints;
+            radius = Fly.GoldenFlyRadius;
         }
 
     }

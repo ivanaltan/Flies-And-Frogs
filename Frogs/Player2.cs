@@ -11,10 +11,10 @@ namespace Frogs
     class Player2 : Frog
     {
 
-        public Player2() : base()
+        public Player2 (ref FliesCollection flies) : base(ref flies)
         {
             p = new Point(750, ground);
-
+            id = 3;
             direction = false;
             img1 = Properties.Resources.frog2_1;
             img2 = Properties.Resources.frog2_2;
