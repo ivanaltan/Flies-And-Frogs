@@ -153,7 +153,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(924, 11);
+            this.btnSave.Location = new System.Drawing.Point(924, 14);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 25);
             this.btnSave.TabIndex = 6;
@@ -163,7 +163,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(924, 40);
+            this.btnLoad.Location = new System.Drawing.Point(924, 43);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(102, 24);
             this.btnLoad.TabIndex = 5;
@@ -173,7 +173,7 @@
             // 
             // btnHighScores
             // 
-            this.btnHighScores.Location = new System.Drawing.Point(799, 11);
+            this.btnHighScores.Location = new System.Drawing.Point(799, 14);
             this.btnHighScores.Name = "btnHighScores";
             this.btnHighScores.Size = new System.Drawing.Size(102, 25);
             this.btnHighScores.TabIndex = 4;
@@ -183,7 +183,7 @@
             // 
             // btnControls
             // 
-            this.btnControls.Location = new System.Drawing.Point(799, 40);
+            this.btnControls.Location = new System.Drawing.Point(799, 43);
             this.btnControls.Name = "btnControls";
             this.btnControls.Size = new System.Drawing.Size(102, 24);
             this.btnControls.TabIndex = 3;
@@ -203,7 +203,7 @@
             // btnPause
             // 
             this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPause.Location = new System.Drawing.Point(610, 40);
+            this.btnPause.Location = new System.Drawing.Point(610, 43);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(166, 25);
             this.btnPause.TabIndex = 1;
@@ -214,7 +214,7 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(610, 11);
+            this.btnNew.Location = new System.Drawing.Point(610, 14);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(166, 24);
             this.btnNew.TabIndex = 0;

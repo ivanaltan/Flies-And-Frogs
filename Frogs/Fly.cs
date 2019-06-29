@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Frogs
 {
-    public abstract class Fly
+    public class Fly
     {
         public static int NormalFlyPoints = 100;
         public static int SpanishFlyPoints = -150;
@@ -29,8 +29,11 @@ namespace Frogs
         public bool wings;
         public bool[] eaten;
         public int points;
-        
-        
+
+        public Image img1;
+        public Image img2;
+        public Image img1F;
+        public Image img2F;
 
         public Fly(int speed, int amplitude, Point center, bool wings, bool direction)
         {

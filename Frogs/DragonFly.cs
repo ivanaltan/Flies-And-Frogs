@@ -13,9 +13,19 @@ namespace Frogs
         {
             points = Fly.DragonFlyPoints;
             radius = Fly.DragonFlyRadius;
+
+            img1 = Properties.Resources.dragonfly_1;
+            img2 = Properties.Resources.dragonfly_2;
+            img1F = Properties.Resources.dragonfly_1;
+            img1F.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            img2F = Properties.Resources.dragonfly_2;
+            img2F.RotateFlip(RotateFlipType.RotateNoneFlipX);
         }
 
-
+        new public void Move()
+        {
+            Graphics g;
+        }
 
     }
 }

@@ -8,6 +8,17 @@ namespace Frogs
 {
     public class FliesCollection
     {
+        //implement
+        public static int maxamplitude;
+        public static int minamplitude;
+        public static int maxspeed;
+        public static int minspeed;
+        public static int maxfrequency;
+        public static int minfrequency;
+        public static int maxpositionX;
+        public static int maxpositionY;
+        public static int minpositionX;
+        public static int minpositionY;
         public List<Fly> flies;
         private Random random;
 

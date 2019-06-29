@@ -73,6 +73,26 @@ namespace Frogs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dragonfly_1 {
+            get {
+                object obj = ResourceManager.GetObject("dragonfly_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dragonfly_2 {
+            get {
+                object obj = ResourceManager.GetObject("dragonfly_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap frog1_1 {
             get {
                 object obj = ResourceManager.GetObject("frog1_1", resourceCulture);
