@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,21 +28,36 @@ namespace Frogs
             flies = new List<Fly>();
         }
 
-        void AddFly() {
+        public void RemoveEaten()
+        {
+            for (int i = flies.Count - 1; i >= 0; --i)
+            {
+                if (flies[i].eaten[0] || flies[i].eaten[1] || flies[i].eaten[2])
+                {
+                    flies.RemoveAt(i);
+                }
+            }        
+        }
+
+        public void Move()
+        {
+            foreach (Fly f in flies)
+            {
+                f.Move();
+            }
+        }
+
+        public void AddFly() {
 
             //int speed = random.Next(1,?);
             //int amplitude = random.Next(1,?);
             //int center = random.Next(?,?);
-            int c = random.Next(0, 1);
-            bool wings;
-            if (c == 0) wings = false;
-            else wings = true;
-            c = random.Next(0, 1);
-            bool direction;
-            if (c == 0) direction = false;
-            else direction = true;
+           //c = random.Next(0, 1);
+            //bool direction;
+           //if (c == 0) direction = false;
+           //else direction = true;
 
-            int type = random.Next(1, 11);
+           //int type = random.Next(1, 11);
 
             //Fly f;
 
@@ -50,7 +66,7 @@ namespace Frogs
             //else if (type<=8)
             //    f = new DragonFly(speed, amplitude, center, wings, direction);
             //else if (type<=10)
-            //    f = new SpanishFly(speed, amplitude, center, wings, direction);
+            //    f = new Wasp(speed, amplitude, center, wings, direction);
             //else
             //    f = new GoldenFly(speed, amplitude, center, wings, direction);
 
@@ -58,6 +74,11 @@ namespace Frogs
 
         }
 
+        public void Draw(Graphics g)
+        {
+            foreach (Fly f in flies)
+                f.Draw(g);
+        }
 
     }
 }

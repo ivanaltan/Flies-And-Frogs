@@ -20,5 +20,11 @@ opengameart.org/content/animated-frog
 
 agrilife.org/dragonfly/dragonfly-catalog/aeshnidae/amul_male_side_view/
 
+Sinusoidal movement from youtube.com/watch?v=rHh43ilfnyI
+
+pngimg.com/download/3955
+
+carolinahoneybees.com/yellow-jacket-wasp-trap/
+
 
 

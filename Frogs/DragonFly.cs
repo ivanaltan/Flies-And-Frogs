@@ -9,7 +9,7 @@ namespace Frogs
 {
     class DragonFly : Fly
     {
-        public DragonFly(int speed, int amplitude, Point center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
+        public DragonFly(Point position, int speed, int amplitude, int frequency, bool direction) : base(position, speed, amplitude, frequency, direction)
         {
             points = Fly.DragonFlyPoints;
             radius = Fly.DragonFlyRadius;
@@ -24,7 +24,7 @@ namespace Frogs
 
         new public void Move()
         {
-            Graphics g;
+            
         }
 
     }

@@ -82,7 +82,7 @@ namespace Frogs
 
             flyspawntimer = new Timer();
             if (players==1)
-                flyspawntimer.Interval = 800;
+                flyspawntimer.Interval = 2000;
             else flyspawntimer.Interval = 1500;
 
             gametimer.Tick += new EventHandler(gametimer_Tick);
@@ -193,7 +193,8 @@ namespace Frogs
 
         private void flyspawn_Tick(object sender, System.EventArgs e)
         {
-
+            flies.AddFly();
+            flyspawntimer.Interval -= (int)(flyspawntimer.Interval*0.10);
         }
 
         private void SaveGameFile()

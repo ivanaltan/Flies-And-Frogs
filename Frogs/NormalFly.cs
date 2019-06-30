@@ -9,10 +9,17 @@ namespace Frogs
 {
     class NormalFly : Fly
     {
-        public NormalFly(int speed, int amplitude, Point center, bool wings, bool direction) : base(speed, amplitude, center, wings, direction)
+        public NormalFly(Point position, int speed, int amplitude, int frequency, bool direction) : base(position, speed, amplitude, frequency, direction)
         {
             points = Fly.NormalFlyPoints;
             radius = Fly.NormalFlyRadius;
+
+            img1 = Properties.Resources.fly_1;
+            img2 = Properties.Resources.fly_2;
+            img1F = Properties.Resources.fly_1;
+            img1F.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            img2F = Properties.Resources.fly_2;
+            img2F.RotateFlip(RotateFlipType.RotateNoneFlipX);
         }
 
     }

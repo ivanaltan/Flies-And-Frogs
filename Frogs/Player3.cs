@@ -11,7 +11,7 @@ namespace Frogs
     {
         public Player3(ref FliesCollection flies) : base(ref flies)
         {
-            p = new Point(450, ground);
+            p = new Point(487, ground);
 
             Random r = new Random();
             direction = (r.Next(0,1)!=0);

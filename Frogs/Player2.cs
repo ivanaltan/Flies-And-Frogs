@@ -13,7 +13,7 @@ namespace Frogs
 
         public Player2 (ref FliesCollection flies) : base(ref flies)
         {
-            p = new Point(750, ground);
+            p = new Point(875, ground);
             id = 3;
             direction = false;
             img1 = Properties.Resources.frog2_1;
