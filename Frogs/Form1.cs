@@ -27,7 +27,9 @@ namespace Frogs
 
         Image logoimage;
         Image background;
-        Bitmap bitmap;
+        Image backgroundidle;
+        Bitmap image;
+        Bitmap imageidle;
 
         bool playing;
         bool pause;
@@ -40,7 +42,9 @@ namespace Frogs
         {
             logoimage = Properties.Resources.logo;
             background = Properties.Resources.background;
-            bitmap = new Bitmap(background);
+            backgroundidle = Properties.Resources.background_idle;
+            image = new Bitmap(background);
+            imageidle = new Bitmap(backgroundidle);
 
             InitializeComponent();
             DoubleBuffered = true;
@@ -82,8 +86,8 @@ namespace Frogs
 
             flyspawntimer = new Timer();
             if (players==1)
-                flyspawntimer.Interval = 2000;
-            else flyspawntimer.Interval = 1500;
+                flyspawntimer.Interval = 2500;
+            else flyspawntimer.Interval = 2000;
 
             gametimer.Tick += new EventHandler(gametimer_Tick);
             frametimer.Tick += new EventHandler(frametimer_Tick);
@@ -94,6 +98,8 @@ namespace Frogs
             frametimer.Enabled = true;
             flyspawntimer.Enabled = true;
             secondtimer.Enabled = true;
+
+            flies.AddFly();
 
         }
 
@@ -157,13 +163,6 @@ namespace Frogs
 
             }
 
-            form = new GameEnd();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                NewGame();
-            }
-            else Close();
-
         }
 
 
@@ -188,13 +187,16 @@ namespace Frogs
                 lblP3.Text = player3.points.ToString();
             }
 
+            flies.RemoveEaten();
+            flies.Move();
+
             Invalidate(true);
         }
 
         private void flyspawn_Tick(object sender, System.EventArgs e)
         {
             flies.AddFly();
-            flyspawntimer.Interval -= (int)(flyspawntimer.Interval*0.10);
+            flyspawntimer.Interval -= (int)(flyspawntimer.Interval*0.02);
         }
 
         private void SaveGameFile()
@@ -293,18 +295,22 @@ namespace Frogs
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
             e.Graphics.Clear(Color.White);
-            e.Graphics.DrawImage(bitmap, new Point(0, 0));
-
-
+            
             if (playing)
             {
+                e.Graphics.DrawImage(image, new Point(0, 0));
+
                 player1.Draw(e.Graphics);
-                if (players>1) player2.Draw(e.Graphics);
+                if (players > 1) player2.Draw(e.Graphics);
                 if (players == 3) player3.Draw(e.Graphics);
+
+                flies.Draw(e.Graphics);
             }
-            
+
+            else
+                e.Graphics.DrawImage(imageidle, new Point(0, 0));
+
         }
 
         private void CheckInputs()
@@ -406,6 +412,7 @@ namespace Frogs
             playing = false;
             gametimer.Dispose();
             Invalidate(true);
+            flies = null;
         }
 
         private void Form1_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
@@ -414,6 +421,15 @@ namespace Frogs
                 Pause();
             if (e.KeyCode == info.controls.newgame)
                 NewGame();
+        }
+
+        private void Form1_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (!playing)
+            {
+                if (e.X > 330 && e.X < 745 && e.Y > 260 && e.Y < 400)
+                    NewGame();
+            }
         }
     }
 }

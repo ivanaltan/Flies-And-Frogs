@@ -9,19 +9,20 @@ namespace Frogs
 {
     public class FliesCollection
     {
-        //implement
-        public static int maxamplitude;
-        public static int minamplitude;
-        public static int maxspeed;
-        public static int minspeed;
-        public static int maxfrequency;
-        public static int minfrequency;
-        public static int maxpositionX;
-        public static int maxpositionY;
-        public static int minpositionX;
-        public static int minpositionY;
+        public static int maxamplitude=100;
+        public static int minamplitude=1;
+        public static int maxspeed=100;
+        public static int minspeed=1;
+        public static int maxfrequency=3;
+        public static int minfrequency=1;
+        public static int maxposXl=-50;
+        public static int minposXl =-150;
+        public static int maxposXr = 1225;
+        public static int minposXr = 1125;
+        public static int maxposY=380;
+        public static int minposY=50;
         public List<Fly> flies;
-        private Random random;
+        private static Random random = new Random();
 
         public FliesCollection()
         {
@@ -49,28 +50,41 @@ namespace Frogs
 
         public void AddFly() {
 
-            //int speed = random.Next(1,?);
-            //int amplitude = random.Next(1,?);
-            //int center = random.Next(?,?);
-           //c = random.Next(0, 1);
-            //bool direction;
-           //if (c == 0) direction = false;
-           //else direction = true;
+            Fly f;
 
-           //int type = random.Next(1, 11);
+            int speed = random.Next(minspeed,maxspeed);
+            int frequency = random.Next(minfrequency, maxfrequency);
 
-            //Fly f;
+            bool direction;
+            int c = random.Next(0, 2);
+            if (c == 0) direction = false;
+            else direction = true;
 
-            //if (type <= 6)
-            //    f = new NormalFly(speed, amplitude, center, wings, direction);
-            //else if (type<=8)
-            //    f = new DragonFly(speed, amplitude, center, wings, direction);
-            //else if (type<=10)
-            //    f = new Wasp(speed, amplitude, center, wings, direction);
-            //else
-            //    f = new GoldenFly(speed, amplitude, center, wings, direction);
+            int posX;
+            int posY = random.Next(minposY, maxposY);
 
-            //flies.Add(f);
+            if (random.Next(0, 2)==0)
+                posX = random.Next(minposXl, maxposXl);
+            else 
+                posX = random.Next(minposXr, maxposXr);
+
+            Point p = new Point(posX, posY);
+
+            int amplitude = random.Next(minamplitude, maxamplitude);
+            while (amplitude + posY < 0 || amplitude + posY > Frog.ground)
+                amplitude = random.Next(minamplitude, maxamplitude);
+
+            int type = random.Next(1, 12);
+            if (type <= 6)
+                f = new NormalFly(p, speed, amplitude, frequency, direction);
+            else if (type<=8)
+                f = new DragonFly(p, speed, amplitude, frequency, direction);
+            else if (type<=10)
+                f = new Wasp(p, speed, amplitude, frequency, direction);
+            else
+                f = new GoldenFly(p, speed, amplitude, frequency, direction);
+
+            flies.Add(f);
 
         }
 

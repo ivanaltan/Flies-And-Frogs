@@ -61,16 +61,26 @@ namespace Frogs
             frames++;
         }
 
+        public void MoveStraight()
+        {
+            CheckPosition();
+
+            if (direction)
+                position.X += (int)(0.0166 * speed);
+
+            else
+                position.X -= (int)(0.0166 * speed);
+        }
+
+
         public void CheckPosition()
         {
-            if (position.X < -50)
+            if (position.X <= FliesCollection.minposXl && direction==false)
             {
-                position.X *= -1;
                 direction = true;
             }
-            if (position.X > 652)
+            if (position.X >= FliesCollection.maxposXr && direction == true)
             {
-                position.X *= -1;
                 direction = false;
             }
 
@@ -82,12 +92,14 @@ namespace Frogs
             {
                 if (img)
                 {
-                    g.DrawImageUnscaled(img1, position);
+                    //g.DrawImageUnscaled(img1, position);
+                    g.DrawImage(img1, new Rectangle(position.X, position.Y, 350, 150));
                     img = false;
                 }
                 else
                 {
-                    g.DrawImageUnscaled(img2, position);
+                    //g.DrawImageUnscaled(img2, position);
+                    g.DrawImage(img2, new Rectangle(position.X, position.Y, 350, 150));
                     img = true;
                 }
             }
@@ -96,12 +108,14 @@ namespace Frogs
             {
                 if (img)
                 {
-                    g.DrawImageUnscaled(img1F, position);
+                    //g.DrawImageUnscaled(img1F, position);
+                    g.DrawImage(img1F, new Rectangle(position.X,position.Y,350,150));
                     img = false;
                 }
                 else
                 {
-                    g.DrawImageUnscaled(img2F, position);
+                    //g.DrawImageUnscaled(img2F, position);
+                    g.DrawImage(img2F, new Rectangle(position.X, position.Y, 350, 150));
                     img = true;
                 }
             }

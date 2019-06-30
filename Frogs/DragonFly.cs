@@ -24,7 +24,7 @@ namespace Frogs
 
         new public void Move()
         {
-            
+            MoveStraight();
         }
 
     }
