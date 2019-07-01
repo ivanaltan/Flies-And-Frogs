@@ -14,11 +14,11 @@ namespace Frogs
     {
         public int players;
         public int time;
-        private String memtime;
+        private string memtime;
         public NewGame()
         {
             InitializeComponent();
-            players = 0;
+            players = 1;
             time = 90;
             memtime = "90";
             tbTime.Text = "90";

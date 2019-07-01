@@ -56,6 +56,7 @@
     <Compile Include="ControlsConfiguration.Designer.cs">
       <DependentUpon>ControlsConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomRandom.cs" />
     <Compile Include="DragonFly.cs" />
     <Compile Include="FliesCollection.cs" />
     <Compile Include="Fly.cs" />

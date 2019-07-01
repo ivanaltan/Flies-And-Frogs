@@ -9,20 +9,24 @@ namespace Frogs
 {
     public class FliesCollection
     {
-        public static int maxamplitude=100;
-        public static int minamplitude=1;
-        public static int maxspeed=100;
-        public static int minspeed=1;
-        public static int maxfrequency=3;
-        public static int minfrequency=1;
-        public static int maxposXl=-50;
-        public static int minposXl =-150;
+        //adjust these
+        public static int flyspawnintervalsingle = 2500;
+        public static int flyspawnintervalmulti = 2000;
+        public static double flyspawnintervaldecrease = 0.0001;
+        public static int maxamplitude = 500;
+        public static int minamplitude = 10;
+        public static int maxspeed = 280;
+        public static int minspeed = 150;
+        public static int maxfrequency = 7;
+        public static int minfrequency = 1;
+        public static int maxposXl = -50;
+        public static int minposXl = -150;
         public static int maxposXr = 1225;
         public static int minposXr = 1125;
-        public static int maxposY=380;
-        public static int minposY=50;
+        public static int maxposY = 380;
+        public static int minposY = 80;
+
         public List<Fly> flies;
-        private static Random random = new Random();
 
         public FliesCollection()
         {
@@ -43,38 +47,36 @@ namespace Frogs
         public void Move()
         {
             foreach (Fly f in flies)
-            {
                 f.Move();
-            }
         }
 
         public void AddFly() {
 
             Fly f;
 
-            int speed = random.Next(minspeed,maxspeed);
-            int frequency = random.Next(minfrequency, maxfrequency);
+            int speed = CustomRandom.GetNumber(minspeed,maxspeed);
+            int frequency = CustomRandom.GetNumber(minfrequency, maxfrequency);
 
             bool direction;
-            int c = random.Next(0, 2);
+            int c = CustomRandom.GetNumber(0, 2);
             if (c == 0) direction = false;
             else direction = true;
 
             int posX;
-            int posY = random.Next(minposY, maxposY);
+            int posY = CustomRandom.GetNumber(minposY, maxposY);
 
-            if (random.Next(0, 2)==0)
-                posX = random.Next(minposXl, maxposXl);
+            if (CustomRandom.GetNumber(0, 2)==0)
+                posX = CustomRandom.GetNumber(minposXl, maxposXl);
             else 
-                posX = random.Next(minposXr, maxposXr);
+                posX = CustomRandom.GetNumber(minposXr, maxposXr);
 
             Point p = new Point(posX, posY);
 
-            int amplitude = random.Next(minamplitude, maxamplitude);
-            while (amplitude + posY < 0 || amplitude + posY > Frog.ground)
-                amplitude = random.Next(minamplitude, maxamplitude);
+            int amplitude = CustomRandom.GetNumber(minamplitude, maxamplitude);
+            while (posY - amplitude < 0 || amplitude + posY > Frog.ground)
+                amplitude = CustomRandom.GetNumber(minamplitude, maxamplitude);
 
-            int type = random.Next(1, 12);
+            int type = CustomRandom.GetNumber(1, 12);
             if (type <= 6)
                 f = new NormalFly(p, speed, amplitude, frequency, direction);
             else if (type<=8)
@@ -82,8 +84,7 @@ namespace Frogs
             else if (type<=10)
                 f = new Wasp(p, speed, amplitude, frequency, direction);
             else
-                f = new GoldenFly(p, speed, amplitude, frequency, direction);
-
+                f = new GoldenFly(p, speed+200, amplitude, frequency, direction);
             flies.Add(f);
 
         }

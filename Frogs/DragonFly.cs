@@ -22,7 +22,7 @@ namespace Frogs
             img2F.RotateFlip(RotateFlipType.RotateNoneFlipX);
         }
 
-        new public void Move()
+         public override void Move()
         {
             MoveStraight();
         }

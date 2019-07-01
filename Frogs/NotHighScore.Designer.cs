@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotHighScore));
             this.btn = new System.Windows.Forms.Button();
             this.lblPoints = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,7 +72,9 @@
             this.Controls.Add(this.lblPoints);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NotHighScore";
+            this.Text = "No High Score";
             this.ResumeLayout(false);
             this.PerformLayout();
 

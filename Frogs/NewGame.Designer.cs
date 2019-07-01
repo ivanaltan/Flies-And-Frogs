@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewGame));
             this.btnStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,8 +36,8 @@
             this.radio2P = new System.Windows.Forms.RadioButton();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbTime = new System.Windows.Forms.TextBox();
             this.radio3P = new System.Windows.Forms.RadioButton();
+            this.tbTime = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,14 +114,6 @@
             this.panel1.Size = new System.Drawing.Size(128, 103);
             this.panel1.TabIndex = 15;
             // 
-            // tbTime
-            // 
-            this.tbTime.Location = new System.Drawing.Point(133, 175);
-            this.tbTime.Name = "tbTime";
-            this.tbTime.Size = new System.Drawing.Size(106, 20);
-            this.tbTime.TabIndex = 16;
-            this.tbTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTime_KeyPress);
-            // 
             // radio3P
             // 
             this.radio3P.AutoSize = true;
@@ -130,6 +123,14 @@
             this.radio3P.TabIndex = 14;
             this.radio3P.Text = "3 players (battle)";
             this.radio3P.UseVisualStyleBackColor = true;
+            // 
+            // tbTime
+            // 
+            this.tbTime.Location = new System.Drawing.Point(133, 175);
+            this.tbTime.Name = "tbTime";
+            this.tbTime.Size = new System.Drawing.Size(106, 20);
+            this.tbTime.TabIndex = 16;
+            this.tbTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTime_KeyPress);
             // 
             // NewGame
             // 
@@ -143,9 +144,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewGame";
+            this.Text = "New Game";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -38,25 +38,29 @@ namespace Frogs
 
         public Fly(Point position, int speed, int amplitude, int frequency, bool direction)
         {
-            this.frames = 0;
+            this.position = position;
             this.speed = speed;
             this.amplitude = amplitude;
-            this.img = false;
-            this.eaten = new bool[3] { false, false, false };
+            this.frequency = frequency;
             this.direction = direction;
+
+            frames = 0;
+            img = false;
+            eaten = new bool[3] { false, false, false };                   
         }
 
-        public void Move()
+
+        public virtual void Move()
         {
             CheckPosition();
 
             if (direction)
-                position.X += (int)(position.X * 0.0166 * speed);
+                position.X += (int)(0.0166 * speed);
 
             else
-                position.X -= (int)(position.X * 0.0166 * speed);
+                position.X -= (int)(0.0166 * speed);
 
-            position.Y = (int)(position.Y * Math.Sin(frames * 0.0166 * frequency) * amplitude);
+            position.Y = -position.Y+(int)(Math.Sin(frames * 0.0166 * frequency) * amplitude);
 
             frames++;
         }
@@ -93,13 +97,13 @@ namespace Frogs
                 if (img)
                 {
                     //g.DrawImageUnscaled(img1, position);
-                    g.DrawImage(img1, new Rectangle(position.X, position.Y, 350, 150));
+                    g.DrawImage(img1, new Rectangle(position, new Size(35, 15)));
                     img = false;
                 }
                 else
                 {
                     //g.DrawImageUnscaled(img2, position);
-                    g.DrawImage(img2, new Rectangle(position.X, position.Y, 350, 150));
+                    g.DrawImage(img2, new Rectangle(position, new Size(35, 15)));
                     img = true;
                 }
             }
@@ -109,13 +113,13 @@ namespace Frogs
                 if (img)
                 {
                     //g.DrawImageUnscaled(img1F, position);
-                    g.DrawImage(img1F, new Rectangle(position.X,position.Y,350,150));
+                    g.DrawImage(img1F, new Rectangle(position,new Size(35,15)));
                     img = false;
                 }
                 else
                 {
                     //g.DrawImageUnscaled(img2F, position);
-                    g.DrawImage(img2F, new Rectangle(position.X, position.Y, 350, 150));
+                    g.DrawImage(img2F, new Rectangle(position, new Size(35, 15)));
                     img = true;
                 }
             }

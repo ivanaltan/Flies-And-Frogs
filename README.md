@@ -28,5 +28,7 @@ carolinahoneybees.com/yellow-jacket-wasp-trap/
 
 trzcacak.rs/imgb/bxmTib/
 
+scottlilly.com/create-better-random-numbers-in-c/
+
 
 
