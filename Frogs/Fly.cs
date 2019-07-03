@@ -9,16 +9,6 @@ namespace Frogs
 {
     public class Fly
     {
-        public static int NormalFlyPoints = 100;
-        public static int WaspPoints = -150;
-        public static int GoldenFlyPoints = 300;
-        public static int DragonFlyPoints = 150;
-
-        public static int NormalFlyRadius = 5;
-        public static int WaspRadius = 7;
-        public static int GoldenFlyRadius = 8;
-        public static int DragonFlyRadius = 7;
-
         public int speed;
         public int amplitude;
         public int frequency;
@@ -44,6 +34,9 @@ namespace Frogs
             this.frequency = frequency;
             this.direction = direction;
 
+            this.center.X = position.X + radius;
+            this.center.Y = position.Y + radius;
+
             frames = 0;
             img = false;
             eaten = new bool[3] { false, false, false };                   
@@ -60,9 +53,12 @@ namespace Frogs
             else
                 position.X -= (int)(0.0166 * speed);
 
-            position.Y = -position.Y+(int)(Math.Sin(frames * 0.0166 * frequency) * amplitude);
+            position.Y = (int)(Math.Sin(frames * 0.0166 * frequency) * amplitude)-position.Y;
 
             frames++;
+
+            this.center.X = position.X + radius;
+            this.center.Y = position.Y + radius;
         }
 
         public void MoveStraight()
@@ -74,16 +70,19 @@ namespace Frogs
 
             else
                 position.X -= (int)(0.0166 * speed);
+
+            this.center.X = position.X + radius;
+            this.center.Y = position.Y + radius;
         }
 
 
         public void CheckPosition()
         {
-            if (position.X <= FliesCollection.minposXl && direction==false)
+            if (position.X <= Adjustments.minposXl && direction==false)
             {
                 direction = true;
             }
-            if (position.X >= FliesCollection.maxposXr && direction == true)
+            if (position.X >= Adjustments.maxposXr && direction == true)
             {
                 direction = false;
             }
@@ -96,14 +95,12 @@ namespace Frogs
             {
                 if (img)
                 {
-                    //g.DrawImageUnscaled(img1, position);
-                    g.DrawImage(img1, new Rectangle(position, new Size(35, 15)));
+                    g.DrawImageUnscaled(img1, position);
                     img = false;
                 }
                 else
                 {
-                    //g.DrawImageUnscaled(img2, position);
-                    g.DrawImage(img2, new Rectangle(position, new Size(35, 15)));
+                    g.DrawImageUnscaled(img2, position);
                     img = true;
                 }
             }
@@ -112,14 +109,12 @@ namespace Frogs
             {
                 if (img)
                 {
-                    //g.DrawImageUnscaled(img1F, position);
-                    g.DrawImage(img1F, new Rectangle(position,new Size(35,15)));
+                    g.DrawImageUnscaled(img1F, position);
                     img = false;
                 }
                 else
                 {
-                    //g.DrawImageUnscaled(img2F, position);
-                    g.DrawImage(img2F, new Rectangle(position, new Size(35, 15)));
+                    g.DrawImageUnscaled(img2F, position);
                     img = true;
                 }
             }

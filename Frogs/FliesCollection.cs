@@ -9,23 +9,6 @@ namespace Frogs
 {
     public class FliesCollection
     {
-        //adjust these
-        public static int flyspawnintervalsingle = 2500;
-        public static int flyspawnintervalmulti = 2000;
-        public static double flyspawnintervaldecrease = 0.0001;
-        public static int maxamplitude = 500;
-        public static int minamplitude = 10;
-        public static int maxspeed = 280;
-        public static int minspeed = 150;
-        public static int maxfrequency = 7;
-        public static int minfrequency = 1;
-        public static int maxposXl = -50;
-        public static int minposXl = -150;
-        public static int maxposXr = 1225;
-        public static int minposXr = 1125;
-        public static int maxposY = 380;
-        public static int minposY = 80;
-
         public List<Fly> flies;
 
         public FliesCollection()
@@ -54,8 +37,8 @@ namespace Frogs
 
             Fly f;
 
-            int speed = CustomRandom.GetNumber(minspeed,maxspeed);
-            int frequency = CustomRandom.GetNumber(minfrequency, maxfrequency);
+            int speed = CustomRandom.GetNumber(Adjustments.minspeed, Adjustments.maxspeed);
+            int frequency = CustomRandom.GetNumber(Adjustments.minfrequency, Adjustments.maxfrequency);
 
             bool direction;
             int c = CustomRandom.GetNumber(0, 2);
@@ -63,18 +46,18 @@ namespace Frogs
             else direction = true;
 
             int posX;
-            int posY = CustomRandom.GetNumber(minposY, maxposY);
+            int posY = CustomRandom.GetNumber(Adjustments.minposY, Adjustments.maxposY);
 
             if (CustomRandom.GetNumber(0, 2)==0)
-                posX = CustomRandom.GetNumber(minposXl, maxposXl);
+                posX = CustomRandom.GetNumber(Adjustments.minposXl, Adjustments.maxposXl);
             else 
-                posX = CustomRandom.GetNumber(minposXr, maxposXr);
+                posX = CustomRandom.GetNumber(Adjustments.minposXr, Adjustments.maxposXr);
 
             Point p = new Point(posX, posY);
 
-            int amplitude = CustomRandom.GetNumber(minamplitude, maxamplitude);
-            while (posY - amplitude < 0 || amplitude + posY > Frog.ground)
-                amplitude = CustomRandom.GetNumber(minamplitude, maxamplitude);
+            int amplitude = CustomRandom.GetNumber(Adjustments.minamplitude, Adjustments.maxamplitude);
+            while (posY - amplitude < 0 || amplitude + posY > Adjustments.ground)
+                amplitude = CustomRandom.GetNumber(Adjustments.minamplitude, Adjustments.maxamplitude);
 
             int type = CustomRandom.GetNumber(1, 12);
             if (type <= 6)

@@ -46,12 +46,15 @@ namespace Frogs
             image = new Bitmap(background);
             imageidle = new Bitmap(backgroundidle);
 
+
             InitializeComponent();
             DoubleBuffered = true;
             KeyPreview = true;
             info = new GameFile();
+
             logo.BackColor = Color.Transparent;
             logo.Image = logoimage;
+
             playing = false;
             pause = false;
             btnPause.Enabled = false;
@@ -68,12 +71,12 @@ namespace Frogs
 
             flies = new FliesCollection();
 
-            player1 = new Player1(ref flies);
+            player1 = new Player1(flies);
 
             if(players>1)
-            player2 = new Player2(ref flies);
+            player2 = new Player2(flies);
             if (players == 3)
-                player3 = new Player3(ref flies);
+                player3 = new Player3(flies);
 
             secondtimer = new Timer();
             secondtimer.Interval = 1000;
@@ -86,8 +89,8 @@ namespace Frogs
 
             flyspawntimer = new Timer();
             if (players==1)
-                flyspawntimer.Interval = FliesCollection.flyspawnintervalsingle;
-            else flyspawntimer.Interval = FliesCollection.flyspawnintervalmulti;
+                flyspawntimer.Interval = Adjustments.flyspawnintervalsingle;
+            else flyspawntimer.Interval = Adjustments.flyspawnintervalmulti;
 
             gametimer.Tick += new EventHandler(gametimer_Tick);
             frametimer.Tick += new EventHandler(frametimer_Tick);
@@ -165,18 +168,19 @@ namespace Frogs
 
         }
 
-
         private void frametimer_Tick(object sender, System.EventArgs e)
         {
             CheckInputs();
             player1.UpdateJump();
             player1.UpdateTongue();
+            player1.CheckCollisions();
             lblP1.Text = player1.points.ToString();
 
             if (players>1)
             {
                 player2.UpdateJump();
                 player2.UpdateTongue();
+                player2.CheckCollisions();
                 lblP2.Text = player2.points.ToString();
             }
 
@@ -184,6 +188,7 @@ namespace Frogs
             {
                 player3.UpdateJump();
                 player3.UpdateTongue();
+                player3.CheckCollisions();
                 lblP3.Text = player3.points.ToString();
             }
 
@@ -193,10 +198,12 @@ namespace Frogs
             Invalidate(true);
         }
 
-        private void flyspawn_Tick(object sender, System.EventArgs e)
+        private void flyspawn_Tick(object sender, EventArgs e)
         {
+            if (flies.flies.Count >= Adjustments.flylimit)
+                return;
             flies.AddFly();
-            flyspawntimer.Interval -= (int)(flyspawntimer.Interval*FliesCollection.flyspawnintervaldecrease);
+            flyspawntimer.Interval -= (int)(flyspawntimer.Interval* Adjustments.flyspawnintervaldecrease);
         }
 
         private void SaveGameFile()
@@ -332,7 +339,7 @@ namespace Frogs
                     player2.Move(false);
                 if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2jump)))
                     player2.Jump();
-                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P1tongue)))
+                if (Keyboard.IsKeyDown(KeyInterop.KeyFromVirtualKey((int)info.controls.P2tongue)))
                     player2.Tongue();
             }
 

@@ -12,8 +12,8 @@ namespace Frogs
 
         public GoldenFly(Point position, int speed, int amplitude, int frequency, bool direction) : base(position, speed, amplitude, frequency, direction)
         {
-            points = Fly.GoldenFlyPoints;
-            radius = Fly.GoldenFlyRadius;
+            points = Adjustments.GoldenFlyPoints;
+            radius = Adjustments.GoldenFlyRadius;
 
             img1 = Properties.Resources.goldenfly_1;
             img2 = Properties.Resources.goldenfly_2;

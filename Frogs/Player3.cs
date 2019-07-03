@@ -9,9 +9,9 @@ namespace Frogs
 {
     class Player3 : Frog
     {
-        public Player3(ref FliesCollection flies) : base(ref flies)
+        public Player3(FliesCollection flies) : base(flies)
         {
-            p = new Point(487, ground);
+            p = new Point(487, Adjustments.ground);
 
             Random r = new Random();
             direction = (r.Next(0,1)!=0);
@@ -25,6 +25,8 @@ namespace Frogs
             img2F.RotateFlip(RotateFlipType.RotateNoneFlipX);
             imgjumpF = Properties.Resources.frog3_jump;
             imgjumpF.RotateFlip(RotateFlipType.RotateNoneFlipX);
+
+            tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx, p.Y + Adjustments.tongueoffsety)));
 
         }
 

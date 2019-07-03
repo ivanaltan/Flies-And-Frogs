@@ -11,8 +11,8 @@ namespace Frogs
     {
         public NormalFly(Point position, int speed, int amplitude, int frequency, bool direction) : base(position, speed, amplitude, frequency, direction)
         {
-            points = Fly.NormalFlyPoints;
-            radius = Fly.NormalFlyRadius;
+            points = Adjustments.NormalFlyPoints;
+            radius = Adjustments.NormalFlyRadius;
 
             img1 = Properties.Resources.fly_1;
             img2 = Properties.Resources.fly_2;

@@ -11,8 +11,8 @@ namespace Frogs
     {
         public DragonFly(Point position, int speed, int amplitude, int frequency, bool direction) : base(position, speed, amplitude, frequency, direction)
         {
-            points = Fly.DragonFlyPoints;
-            radius = Fly.DragonFlyRadius;
+            points = Adjustments.DragonFlyPoints;
+            radius = Adjustments.DragonFlyRadius;
 
             img1 = Properties.Resources.dragonfly_1;
             img2 = Properties.Resources.dragonfly_2;

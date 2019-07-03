@@ -12,8 +12,8 @@ namespace Frogs
 
         public Wasp(Point position, int speed, int amplitude, int frequency, bool direction) : base(position, speed, amplitude, frequency, direction)
         {
-            points = Fly.WaspPoints;
-            radius = Fly.WaspRadius;
+            points = Adjustments.WaspPoints;
+            radius = Adjustments.WaspRadius;
 
             img1 = Properties.Resources.wasp_1;
             img2 = Properties.Resources.wasp_2;
