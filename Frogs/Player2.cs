@@ -13,8 +13,8 @@ namespace Frogs
 
         public Player2 (FliesCollection flies) : base(flies)
         {
-            p = new Point(875, Adjustments.ground);
-            id = 1;
+            position = new Point(875, Adjustments.Ground);
+            id = 2;
             direction = false;
             img1 = Properties.Resources.frog2_1;
             img2 = Properties.Resources.frog2_2;
@@ -26,7 +26,7 @@ namespace Frogs
             imgjumpF = Properties.Resources.frog2_jump;
             imgjumpF.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
-            tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx, p.Y + Adjustments.tongueoffsety)));
+            tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX, position.Y + Adjustments.TongueOffsetY)));
 
         }
 

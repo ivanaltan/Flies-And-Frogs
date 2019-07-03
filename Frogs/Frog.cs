@@ -10,7 +10,7 @@ namespace Frogs
     public class Frog
     {
         public int tonguestate;
-        public Point p;
+        public Point position;
         public bool direction;
 
         public bool jumping;
@@ -32,6 +32,8 @@ namespace Frogs
 
         public List<Circle> tongue;
 
+        public FrogText text;
+
         public FliesCollection flies;
 
         public Frog(FliesCollection flies)
@@ -43,6 +45,7 @@ namespace Frogs
             moving = false;
             jumping = false;
 
+            text = new FrogText();
             tongue = new List<Circle>();
         }
 
@@ -51,24 +54,27 @@ namespace Frogs
             foreach (Circle c in tongue)
                 c.Draw(g);
 
+            if (text.active)
+                text.Draw(g, position);
+
             if (direction)
             {
                 if (moving)
-                    g.DrawImageUnscaled(img2, p);
+                    g.DrawImageUnscaled(img2, position);
                 else if (jumping)
-                    g.DrawImageUnscaled(imgjump, p);
+                    g.DrawImageUnscaled(imgjump, position);
                 else
-                    g.DrawImageUnscaled(img1, p);
+                    g.DrawImageUnscaled(img1, position);
             }
 
             else
             {
                 if (moving)
-                    g.DrawImageUnscaled(img2F, p);
+                    g.DrawImageUnscaled(img2F, position);
                 else if (jumping)
-                    g.DrawImageUnscaled(imgjumpF, p);
+                    g.DrawImageUnscaled(imgjumpF, position);
                 else
-                    g.DrawImageUnscaled(img1F, p);
+                    g.DrawImageUnscaled(img1F, position);
             }
 
             moving = false;
@@ -79,8 +85,8 @@ namespace Frogs
         public void Jump()
         {
             if (jumping && !powerup) return;
-            if (p.X <= 38 && !direction) return;
-            if (p.X >= 967 && direction) return;
+            if (position.X <= 38 && !direction) return;
+            if (position.X >= 967 && direction) return;
 
             jumping = true;
             top = false;
@@ -97,8 +103,8 @@ namespace Frogs
 
             else
             {
-                if (p.X <= 35 && !direction) return;
-                if (p.X >= 970 && direction) return;
+                if (position.X <= 35 && !direction) return;
+                if (position.X >= 970 && direction) return;
 
                 if (direction)
                 {
@@ -121,19 +127,19 @@ namespace Frogs
             if (jumping)
             {
 
-                if(p.X<=35 || p.X>=970)
+                if(position.X<=35 || position.X>=970)
                 {
                     if (direction) direction = false;
                     else direction = true;
                 }
 
-                if (!top && p.Y <= Adjustments.jumpheight)
+                if (!top && position.Y <= Adjustments.JumpHeight)
                     top = true;
 
-                if (top && p.Y >= Adjustments.ground)
+                if (top && position.Y >= Adjustments.Ground)
                 {
                     jumping = false;
-                    p.Y = Adjustments.ground;
+                    position.Y = Adjustments.Ground;
                     return;
                 }
 
@@ -153,11 +159,16 @@ namespace Frogs
 
         public void UpdatePosition(int x, int y)
         {
-            p.X += x;
-            p.Y += y;
+            position.X += x;
+            position.Y += y;
 
             foreach (Circle c in tongue)
                 c.Move(x,y);
+        }
+
+        public void Text()
+        {
+
         }
 
         public void Tongue()
@@ -174,43 +185,43 @@ namespace Frogs
                 case 0:
                     return;
                 case 1:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 2, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 2, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 2:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 4, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 4, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 3:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 6, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 6, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 4:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 8, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 8, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 5:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 10, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 10, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 6:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 12, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 12, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 7:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 14, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 14, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 8:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 16, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 16, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 9:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 18, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 18, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 10:
-                    tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx + 20, p.Y + Adjustments.tongueoffsety)));
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 20, position.Y + Adjustments.TongueOffsetY)));
                     tonguestate++;
                     return;
                 case 11:
@@ -266,12 +277,15 @@ namespace Frogs
             {
                 foreach (Fly f in flies.flies)
                 {
-                    if ((c.center.X - f.center.X) * (c.center.X - f.center.X) + (c.center.Y - f.center.Y) * (c.center.Y - f.center.Y) <= ((Adjustments.circleradius + f.radius) * (Adjustments.circleradius + f.radius)))
+                    if ((c.center.X - f.center.X) * (c.center.X - f.center.X) + (c.center.Y - f.center.Y) * (c.center.Y - f.center.Y) <= ((Adjustments.CircleRadius + f.radius) * (Adjustments.CircleRadius + f.radius)))
                     {
                         if (!f.eaten[id])
                         {
                             f.eaten[id] = true;
+                            f.deadstate = 1;
+
                             points += f.points;
+                            text.AddPoints(f.points);
                         }
                     }
                 }

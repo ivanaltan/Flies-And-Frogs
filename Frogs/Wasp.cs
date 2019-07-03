@@ -17,10 +17,13 @@ namespace Frogs
 
             img1 = Properties.Resources.wasp_1;
             img2 = Properties.Resources.wasp_2;
+            img3 = Properties.Resources.wasp_3;
             img1F = Properties.Resources.wasp_1;
             img1F.RotateFlip(RotateFlipType.RotateNoneFlipX);
             img2F = Properties.Resources.wasp_2;
             img2F.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            img3F = Properties.Resources.wasp_3;
+            img3F.RotateFlip(RotateFlipType.RotateNoneFlipX);
         }
 
     }

@@ -8,39 +8,49 @@ namespace Frogs
 {
     public static class Adjustments
     {
-        public static int jumpheight = 150;
-        public static int ground = 430;
-        public static int circleradius = 3;
+        public static int JumpHeight = 150; // pixels
+        public static int Ground = 430; // pixels
+        public static int CircleRadius = 3; // pixels
 
-        public static int tongueoffsetx = 43;
-        public static int tongueoffsety = 12;
+        public static int JumpAngle = 75; // degrees
+        public static int JumpVelocity = 100; // pixels per second
+        public static int GravityAcceleration = 10; // pixels per second*second
 
-        public static int flylimit = 15;
-        public static int flyspawnintervalsingle = 2500;
-        public static int flyspawnintervalmulti = 2000;
-        public static double flyspawnintervaldecrease = 0.0001;
+        public static int TongueOffsetX = 43; // pixels
+        public static int TongueOffsetY = 12; // pixels
 
-        public static int maxamplitude = 500;
-        public static int minamplitude = 10;
-        public static int maxspeed = 280;
-        public static int minspeed = 150;
-        public static int maxfrequency = 7;
-        public static int minfrequency = 1;
-        public static int maxposXl = -50;
-        public static int minposXl = -150;
-        public static int maxposXr = 1225;
-        public static int minposXr = 1125;
-        public static int maxposY = 380;
-        public static int minposY = 80;
+        public static int FrogTextOffsetX = 3; // pixels
+        public static int FrogTextOffsetY = -30; // pixels
+        public static int FrogTextDuration = 60; // frames
 
-        public static int NormalFlyPoints = 100;
-        public static int WaspPoints = -150;
-        public static int GoldenFlyPoints = 300;
-        public static int DragonFlyPoints = 150;
+        public static int FlyNumberLimit = 15; // number of flies
+        public static int FlySpawnIntervalSingle = 2500; // milliseconds
+        public static int FlySpawnIntervalMulti = 2000; // milliseconds
+        public static double FlySpawnIntervalDecrease = 0.0001; // ratio
 
-        public static int NormalFlyRadius = 5;
-        public static int WaspRadius = 7;
-        public static int GoldenFlyRadius = 8;
-        public static int DragonFlyRadius = 7;
+        public static int FlyLifetime = 30; // seconds
+        public static int DeadStateDuration = 6; // frames
+        public static int MaxAmplitude = 500; // pixels
+        public static int MinAmplitude = 10; // pixels
+        public static int MaxSpeed = 280; // pixels per seconds
+        public static int MinSpeed = 150; // pixels per seconds
+        public static int MaxFrequency = 7; // hz
+        public static int MinFrequency = 1; // hz
+        public static int MaxPosXL = -50; // position pixels
+        public static int MinPosXL = -150; // position pixels
+        public static int MaxPosXR = 1225; // position pixels
+        public static int MinposXR = 1125; // position pixels
+        public static int MaxPosY = 380; // position pixels
+        public static int MinPosY = 80; // position pixels
+
+        public static int NormalFlyPoints = 100; // points
+        public static int WaspPoints = -150; // points
+        public static int GoldenFlyPoints = 300; // points
+        public static int DragonFlyPoints = 150; // points
+
+        public static int NormalFlyRadius = 5; // pixels
+        public static int WaspRadius = 7; // pixels
+        public static int GoldenFlyRadius = 8; // pixels
+        public static int DragonFlyRadius = 7; // pixels
     }
 }

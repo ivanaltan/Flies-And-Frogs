@@ -11,11 +11,11 @@ namespace Frogs
     {
         public Player3(FliesCollection flies) : base(flies)
         {
-            p = new Point(487, Adjustments.ground);
+            position = new Point(487, Adjustments.Ground);
 
             Random r = new Random();
             direction = (r.Next(0,1)!=0);
-            id = 2;
+            id = 3;
             img1 = Properties.Resources.frog3_1;
             img2 = Properties.Resources.frog3_2;
             imgjump = Properties.Resources.frog3_jump;
@@ -26,7 +26,7 @@ namespace Frogs
             imgjumpF = Properties.Resources.frog3_jump;
             imgjumpF.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
-            tongue.Add(new Circle(new Point(p.X + Adjustments.tongueoffsetx, p.Y + Adjustments.tongueoffsety)));
+            tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX, position.Y + Adjustments.TongueOffsetY)));
 
         }
 

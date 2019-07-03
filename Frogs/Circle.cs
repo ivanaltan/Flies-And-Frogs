@@ -27,7 +27,7 @@ namespace Frogs
         public void Draw(Graphics g)
         {
             Brush brush = new SolidBrush(Color.Red);
-            g.FillEllipse(brush, center.X - Adjustments.circleradius, center.Y - Adjustments.circleradius, 2 * Adjustments.circleradius, 2 * Adjustments.circleradius);
+            g.FillEllipse(brush, center.X - Adjustments.CircleRadius, center.Y - Adjustments.CircleRadius, 2 * Adjustments.CircleRadius, 2 * Adjustments.CircleRadius);
             brush.Dispose();
         }
     }

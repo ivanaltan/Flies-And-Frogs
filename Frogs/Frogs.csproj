@@ -68,6 +68,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Frog.cs" />
+    <Compile Include="FrogText.cs" />
     <Compile Include="GameEnd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +213,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.idle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dragonfly.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fly.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goldenfly.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wasp.3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
