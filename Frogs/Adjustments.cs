@@ -12,9 +12,9 @@ namespace Frogs
         public static int Ground = 430; // pixels
         public static int CircleRadius = 3; // pixels
 
-        public static int JumpAngle = 75; // degrees
-        public static int JumpVelocity = 100; // pixels per second
-        public static int GravityAcceleration = 10; // pixels per second*second
+        public static int JumpAngle = 70; // degrees
+        public static int JumpVelocity = 23; // pixels per second
+        public static int GravityAcceleration = 40; // pixels per second*second
 
         public static int TongueOffsetX = 43; // pixels
         public static int TongueOffsetY = 12; // pixels
@@ -34,7 +34,7 @@ namespace Frogs
         public static int MinAmplitude = 10; // pixels
         public static int MaxSpeed = 280; // pixels per seconds
         public static int MinSpeed = 150; // pixels per seconds
-        public static int MaxFrequency = 7; // hz
+        public static int MaxFrequency = 5; // hz
         public static int MinFrequency = 1; // hz
         public static int MaxPosXL = -50; // position pixels
         public static int MinPosXL = -150; // position pixels

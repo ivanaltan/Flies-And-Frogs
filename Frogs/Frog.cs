@@ -14,10 +14,14 @@ namespace Frogs
         public bool direction;
 
         public bool jumping;
+        public bool top;
+        public int jumptime;
+        public int jumpvelocityx;
+        public int jumpvelocityy;
+        public int greatestheight;
 
         public bool moving;
         public bool img;
-        public bool top;
         public bool powerup;
 
         public int points;
@@ -90,6 +94,10 @@ namespace Frogs
 
             jumping = true;
             top = false;
+            jumptime = 0;
+            jumpvelocityx = (int)(Adjustments.JumpVelocity * Math.Cos(Adjustments.JumpAngle*Math.PI/180));
+            jumpvelocityy = (int)(Adjustments.JumpVelocity * Math.Sin(Adjustments.JumpAngle*Math.PI/180));
+            greatestheight = Adjustments.Ground+(int)((Adjustments.JumpVelocity * Adjustments.JumpVelocity * Math.Sin(Adjustments.JumpAngle * Math.PI / 180) * Math.Sin(Adjustments.JumpAngle * Math.PI / 180)) / (2 * Adjustments.GravityAcceleration));
 
         }
 
@@ -124,37 +132,41 @@ namespace Frogs
 
         public void UpdateJump()
         {
-            if (jumping)
+            if (!jumping) return;
+
+            if (position.X <= 35 || position.X >= 970)
             {
-
-                if(position.X<=35 || position.X>=970)
-                {
-                    if (direction) direction = false;
-                    else direction = true;
-                }
-
-                if (!top && position.Y <= Adjustments.JumpHeight)
-                    top = true;
-
-                if (top && position.Y >= Adjustments.Ground)
-                {
-                    jumping = false;
-                    position.Y = Adjustments.Ground;
-                    return;
-                }
-
-                else if (!top && direction)
-                    UpdatePosition(2,-5);
-
-                else if (!top && !direction)
-                    UpdatePosition(-2, -5);
-
-                else if (top && direction)
-                    UpdatePosition(2, 5);
-
-                else if (top && !direction)
-                    UpdatePosition(-2, 5);
+                if (direction) direction = false;
+                else direction = true;
             }
+
+            if (position.Y >= Adjustments.Ground && top)
+            {
+                jumping = false;
+                position.Y = Adjustments.Ground;
+                return;
+            }
+
+            int addx, addy;
+
+            if (direction)
+                addx = jumpvelocityx;
+            
+            else
+                addx = -jumpvelocityx;
+
+            addy = -(int)(jumpvelocityy - (Adjustments.GravityAcceleration * jumptime * 0.0166));
+
+            if (position.Y + addy >= Adjustments.Ground && top)
+            {
+                addy = Adjustments.Ground - position.Y;
+                jumping = false;
+            }
+
+            UpdatePosition(addx, addy);
+
+            jumptime++;
+            if (!top && position.Y <= greatestheight) top = true;
         }
 
         public void UpdatePosition(int x, int y)
@@ -164,11 +176,6 @@ namespace Frogs
 
             foreach (Circle c in tongue)
                 c.Move(x,y);
-        }
-
-        public void Text()
-        {
-
         }
 
         public void Tongue()
