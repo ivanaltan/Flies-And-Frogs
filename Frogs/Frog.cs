@@ -21,7 +21,7 @@ namespace Frogs
         public int greatestheight;
 
         public bool moving;
-        public bool img;
+        public int img;
         public bool powerup;
 
         public int points;
@@ -53,6 +53,7 @@ namespace Frogs
             moving = false;
             jumping = false;
 
+            img = 0;
             text = new FrogText();
             tongue = new List<Circle>();
             tonguedelay = 0;
@@ -69,7 +70,17 @@ namespace Frogs
             if (direction)
             {
                 if (moving)
-                    g.DrawImageUnscaled(img2, position);
+                {
+                    if(img < 2)
+                        g.DrawImageUnscaled(img1, position);
+                    else
+                        g.DrawImageUnscaled(img2, position);
+
+                    if(img == 4)
+                        img = 1;
+                    else
+                        img++;
+                }   
                 else if (jumping)
                     g.DrawImageUnscaled(imgjump, position);
                 else
@@ -79,7 +90,17 @@ namespace Frogs
             else
             {
                 if (moving)
-                    g.DrawImageUnscaled(img2F, position);
+                {
+                    if (img < 2)
+                        g.DrawImageUnscaled(img1F, position);
+                    else
+                        g.DrawImageUnscaled(img2F, position);
+
+                    if (img == 4)
+                        img = 1;
+                    else
+                        img++;
+                }
                 else if (jumping)
                     g.DrawImageUnscaled(imgjumpF, position);
                 else

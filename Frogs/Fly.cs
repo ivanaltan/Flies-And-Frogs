@@ -128,39 +128,47 @@ namespace Frogs
 
             if (direction)
             {
-                if (img==1)
+                switch (img)
                 {
-                    g.DrawImageUnscaled(img1, position);
-                    img = 4;
-                }
-                else if (img==4)
-                {
-                    g.DrawImageUnscaled(img4, position);
-                    img = 2;
-                }
-                else
-                {
-                    g.DrawImageUnscaled(img2, position);
-                    img = 1;
-                }
+                    case 1:
+                        g.DrawImageUnscaled(img1, position);
+                        img++;
+                        break;
+                    case 2:
+                        g.DrawImageUnscaled(img4, position);
+                        img++;
+                        break;
+                    case 3:
+                        g.DrawImageUnscaled(img2, position);
+                        img++;
+                        break;
+                    case 4:
+                        g.DrawImageUnscaled(img4, position);
+                        img=1;
+                        break;
+                }             
             }
 
             else
             {
-                if (img == 1)
+                switch (img)
                 {
-                    g.DrawImageUnscaled(img1F, position);
-                    img = 4;
-                }
-                else if (img == 4)
-                {
-                    g.DrawImageUnscaled(img4F, position);
-                    img = 2;
-                }
-                else
-                {
-                    g.DrawImageUnscaled(img2F, position);
-                    img = 1;
+                    case 1:
+                        g.DrawImageUnscaled(img1F, position);
+                        img++;
+                        break;
+                    case 2:
+                        g.DrawImageUnscaled(img4F, position);
+                        img++;
+                        break;
+                    case 3:
+                        g.DrawImageUnscaled(img2F, position);
+                        img++;
+                        break;
+                    case 4:
+                        g.DrawImageUnscaled(img4F, position);
+                        img = 1;
+                        break;
                 }
             }
         }
