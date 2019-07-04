@@ -20,6 +20,7 @@ namespace Frogs
         public static int TongueSwitchOffset = 38; // pixels
         public static int TongueStates = 37; // states (odd number)
         public static int TongueStatesPositionOffset = 3; // pixels
+        public static int TongueRepeatedUsageDelay = 25; // frames
 
         public static int FrogTextOffsetX = 3; // pixels
         public static int FrogTextOffsetY = -30; // pixels

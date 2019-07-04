@@ -9,7 +9,7 @@ namespace Frogs
 {
     public class Frog
     {
-        public int tonguestate;
+
         public Point position;
         public bool direction;
 
@@ -26,6 +26,9 @@ namespace Frogs
 
         public int points;
         public int id;
+
+        public int tonguestate;
+        public int tonguedelay;
 
         public Image img1;
         public Image img2;
@@ -52,6 +55,7 @@ namespace Frogs
 
             text = new FrogText();
             tongue = new List<Circle>();
+            tonguedelay = 0;
         }
 
         public void Draw(Graphics g)
@@ -84,6 +88,11 @@ namespace Frogs
 
             moving = false;
 
+            if (tonguedelay != 0)
+                tonguedelay++;
+
+            if (tonguedelay == Adjustments.TongueRepeatedUsageDelay)
+                tonguedelay = 0;
 
         }
 
@@ -206,6 +215,9 @@ namespace Frogs
 
         public void Tongue()
         {
+            if (tonguedelay != 0)
+                return;
+
             if (tonguestate == 0)
             {
                 tonguestate = 1;
@@ -243,8 +255,8 @@ namespace Frogs
                 return;
             }
 
-                tonguestate = 0;
-
+            tonguestate = 0;
+            tonguedelay = 1;
         }
 
         public void CheckCollisions()
