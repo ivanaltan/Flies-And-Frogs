@@ -64,11 +64,11 @@ namespace Frogs
             if (type <= 6)
                 f = new NormalFly(p, speed, amplitude, frequency, direction);
             else if (type<=8)
-                f = new DragonFly(p, speed, amplitude, frequency, direction);
+                f = new DragonFly(p, speed+ Adjustments.DragonFlySpeedUp, amplitude, frequency, direction);
             else if (type<=10)
                 f = new Wasp(p, speed, amplitude, frequency, direction);
             else
-                f = new GoldenFly(p, speed+200, amplitude, frequency, direction);
+                f = new GoldenFly(p, speed+Adjustments.GoldenFlySpeedUp, amplitude, frequency, direction);
             flies.Add(f);
 
         }

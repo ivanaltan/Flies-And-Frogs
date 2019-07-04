@@ -26,7 +26,7 @@ namespace Frogs
             imgjumpF = Properties.Resources.frog2_jump;
             imgjumpF.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
-            tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX, position.Y + Adjustments.TongueOffsetY)));
+            CreateTongue();
 
         }
 

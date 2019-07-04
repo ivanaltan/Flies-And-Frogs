@@ -436,7 +436,7 @@ namespace Frogs
         {
             if (!playing)
             {
-                if (e.X > 330 && e.X < 745 && e.Y > 260 && e.Y < 400)
+                if (e.X > 358 && e.X < 726 && e.Y > 220 && e.Y < 448)
                     NewGame();
             }
         }

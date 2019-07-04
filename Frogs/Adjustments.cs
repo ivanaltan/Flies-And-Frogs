@@ -35,6 +35,8 @@ namespace Frogs
         public static int MinAmplitude = 10; // pixels
         public static int MaxSpeed = 280; // pixels per seconds
         public static int MinSpeed = 150; // pixels per seconds
+        public static int GoldenFlySpeedUp = 250; // pixels per seconds
+        public static int DragonFlySpeedUp = 150; // pixels per seconds
         public static int MaxFrequency = 5; // hz
         public static int MinFrequency = 1; // hz
         public static int MaxPosXL = -50; // position pixels

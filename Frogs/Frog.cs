@@ -184,6 +184,15 @@ namespace Frogs
                 c.Move(x,y);
         }
 
+        public void CreateTongue()
+        {
+            if(direction)
+                tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX, position.Y + Adjustments.TongueOffsetY)));
+
+            else
+                tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX - Adjustments.TongueSwitchOffset, position.Y + Adjustments.TongueOffsetY)));
+        }
+
         public void SwitchTongue()
         {
             foreach (Circle c in tongue)

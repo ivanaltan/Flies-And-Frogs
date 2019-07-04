@@ -42,8 +42,8 @@ namespace Frogs
 
             P2left = Keys.D;
             P2right = Keys.G;
-            P2jump = Keys.Q;
-            P2tongue = Keys.W;
+            P2jump = Keys.W;
+            P2tongue = Keys.Q;
 
             P3left = Keys.NumPad4;
             P3right = Keys.NumPad6;

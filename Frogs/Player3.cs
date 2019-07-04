@@ -13,8 +13,7 @@ namespace Frogs
         {
             position = new Point(487, Adjustments.Ground);
 
-            Random r = new Random();
-            direction = (r.Next(0,1)!=0);
+            direction = (CustomRandom.GetNumber(0,2)!=0);
             id = 3;
             img1 = Properties.Resources.frog3_1;
             img2 = Properties.Resources.frog3_2;
@@ -26,7 +25,7 @@ namespace Frogs
             imgjumpF = Properties.Resources.frog3_jump;
             imgjumpF.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
-            tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX, position.Y + Adjustments.TongueOffsetY)));
+            CreateTongue();
 
         }
 
