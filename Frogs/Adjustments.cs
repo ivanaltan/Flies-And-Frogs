@@ -8,25 +8,26 @@ namespace Frogs
 {
     public static class Adjustments
     {
-        public static int JumpHeight = 150; // pixels
         public static int Ground = 430; // pixels
-        public static int CircleRadius = 3; // pixels
-
         public static int JumpAngle = 70; // degrees
         public static int JumpVelocity = 23; // pixels per second
         public static int GravityAcceleration = 40; // pixels per second*second
 
+        public static int CircleRadius = 3; // pixels
         public static int TongueOffsetX = 43; // pixels
         public static int TongueOffsetY = 12; // pixels
+        public static int TongueSwitchOffset = 38; // pixels
+        public static int TongueStates = 37; // states (odd number)
+        public static int TongueStatesPositionOffset = 3; // pixels
 
         public static int FrogTextOffsetX = 3; // pixels
         public static int FrogTextOffsetY = -30; // pixels
         public static int FrogTextDuration = 60; // frames
 
-        public static int FlyNumberLimit = 15; // number of flies
+        public static int FlyNumberLimit = 7; // number of flies
         public static int FlySpawnIntervalSingle = 2500; // milliseconds
         public static int FlySpawnIntervalMulti = 2000; // milliseconds
-        public static double FlySpawnIntervalDecrease = 0.0001; // ratio
+        public static double FlySpawnIntervalDecrease = 0.000001; // ratio
 
         public static int FlyLifetime = 30; // seconds
         public static int DeadStateDuration = 6; // frames
@@ -48,9 +49,9 @@ namespace Frogs
         public static int GoldenFlyPoints = 300; // points
         public static int DragonFlyPoints = 150; // points
 
-        public static int NormalFlyRadius = 5; // pixels
-        public static int WaspRadius = 7; // pixels
-        public static int GoldenFlyRadius = 8; // pixels
-        public static int DragonFlyRadius = 7; // pixels
+        public static int NormalFlyRadius = 17; // pixels
+        public static int WaspRadius = 19; // pixels
+        public static int GoldenFlyRadius = 17; // pixels
+        public static int DragonFlyRadius = 23; // pixels
     }
 }

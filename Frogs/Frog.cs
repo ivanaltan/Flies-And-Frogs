@@ -35,6 +35,7 @@ namespace Frogs
         public Image imgjumpF;
 
         public List<Circle> tongue;
+        int tonguei;
 
         public FrogText text;
 
@@ -88,9 +89,10 @@ namespace Frogs
 
         public void Jump()
         {
-            if (jumping && !powerup) return;
-            if (position.X <= 38 && !direction) return;
-            if (position.X >= 967 && direction) return;
+            if (jumping && !powerup)
+                return;
+            if ((position.X <= 38 && !direction) || (position.X >= 967 && direction))
+                return;
 
             jumping = true;
             top = false;
@@ -107,7 +109,10 @@ namespace Frogs
             if (jumping) return;
 
             if (direction != d)
+            {
                 direction = d;
+                SwitchTongue(); 
+            }
 
             else
             {
@@ -116,11 +121,11 @@ namespace Frogs
 
                 if (direction)
                 {
-                    UpdatePosition(5, 0);
+                    UpdatePosition(7, 0);
                 }
                 else
                 {
-                    UpdatePosition(-5, 0);
+                    UpdatePosition(-7, 0);
                 }
 
                 moving = true;
@@ -138,6 +143,7 @@ namespace Frogs
             {
                 if (direction) direction = false;
                 else direction = true;
+                SwitchTongue();
             }
 
             if (position.Y >= Adjustments.Ground && top)
@@ -178,103 +184,57 @@ namespace Frogs
                 c.Move(x,y);
         }
 
+        public void SwitchTongue()
+        {
+            foreach (Circle c in tongue)
+            {
+                if (!direction)
+                    c.Move(-Adjustments.TongueSwitchOffset, 0);
+                else
+                    c.Move(Adjustments.TongueSwitchOffset, 0);
+            }
+        }
+
         public void Tongue()
         {
             if (tonguestate == 0)
-                tonguestate = 1;   
+            {
+                tonguestate = 1;
+                tonguei = 2;
+            }
         }
 
         public void UpdateTongue()
         {
+            if (tonguestate == 0)
+                return;
 
-            switch (tonguestate)
+            if (tonguestate <= Adjustments.TongueStates / 2)
             {
-                case 0:
-                    return;
-                case 1:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 2, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 2:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 4, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 3:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 6, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 4:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 8, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 5:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 10, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 6:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 12, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 7:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 14, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 8:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 16, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 9:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 18, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 10:
-                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + 20, position.Y + Adjustments.TongueOffsetY)));
-                    tonguestate++;
-                    return;
-                case 11:
-                    tonguestate++;
-                    return;
-                case 12:
-                    tongue.RemoveAt(10);
-                    tonguestate++;
-                    return;
-                case 13:
-                    tongue.RemoveAt(9);
-                    tonguestate++;
-                    return;
-                case 14:
-                    tongue.RemoveAt(8);
-                    tonguestate++;
-                    return;
-                case 15:
-                    tongue.RemoveAt(7);
-                    tonguestate++;
-                    return;
-                case 16:
-                    tongue.RemoveAt(6);
-                    tonguestate++;
-                    return;
-                case 17:
-                    tongue.RemoveAt(5);
-                    tonguestate++;
-                    return;
-                case 18:
-                    tongue.RemoveAt(4);
-                    tonguestate++;
-                    return;
-                case 19:
-                    tongue.RemoveAt(3);
-                    tonguestate++;
-                    return;
-                case 20:
-                    tongue.RemoveAt(2);
-                    tonguestate++;
-                    return;
-                case 21:
-                    tongue.RemoveAt(1);
-                    tonguestate=0;
-                    return;
+                if (direction)
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX + tonguestate * Adjustments.TongueStatesPositionOffset, position.Y + Adjustments.TongueOffsetY)));
+                else
+                    tongue.Add(new Circle(new Point(position.X + Adjustments.TongueOffsetX - Adjustments.TongueSwitchOffset - tonguestate * Adjustments.TongueStatesPositionOffset, position.Y + Adjustments.TongueOffsetY)));
+
+                tonguestate++;
+                return;
             }
+
+            if (tonguestate == Adjustments.TongueStates / 2 + 1)
+            {
+                tonguestate++;
+                return;
+            }
+
+            if (tonguestate <= Adjustments.TongueStates)
+            {
+                tongue.RemoveAt(tonguestate-tonguei);
+                tonguei +=2;
+                tonguestate++;
+                return;
+            }
+
+                tonguestate = 0;
 
         }
 

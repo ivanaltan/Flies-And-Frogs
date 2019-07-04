@@ -203,7 +203,7 @@ namespace Frogs
             if (flies.flies.Count >= Adjustments.FlyNumberLimit)
                 return;
             flies.AddFly();
-            flyspawntimer.Interval -= (int)(flyspawntimer.Interval* Adjustments.FlySpawnIntervalDecrease);
+            flyspawntimer.Interval -= (int)(flyspawntimer.Interval * Adjustments.FlySpawnIntervalDecrease);
         }
 
         private void SaveGameFile()
@@ -376,6 +376,7 @@ namespace Frogs
                 secondtimer.Stop();
                 pause = true;
                 btnPause.Text = "Unpause";
+                btnNew.Enabled = false;
 
             }
 
@@ -387,13 +388,14 @@ namespace Frogs
                 secondtimer.Start();
                 pause = false;
                 btnPause.Text = "Pause";
+                btnNew.Enabled = true;
             }
 
         }
 
         private void NewGame()
         {
-            if (playing && !pause) Pause();
+            if (pause) return;
 
             NewGame form = new NewGame();
             DialogResult result = form.ShowDialog();

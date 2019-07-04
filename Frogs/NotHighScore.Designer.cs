@@ -37,7 +37,7 @@
             // btn
             // 
             this.btn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn.Location = new System.Drawing.Point(59, 113);
+            this.btn.Location = new System.Drawing.Point(68, 116);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(128, 23);
             this.btn.TabIndex = 11;
@@ -59,15 +59,15 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 20);
+            this.label1.Size = new System.Drawing.Size(240, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "You did got a new high score";
+            this.label1.Text = "You did not got a new high score";
             // 
             // NotHighScore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(241, 158);
+            this.ClientSize = new System.Drawing.Size(266, 158);
             this.Controls.Add(this.btn);
             this.Controls.Add(this.lblPoints);
             this.Controls.Add(this.label1);
