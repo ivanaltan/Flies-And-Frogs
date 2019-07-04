@@ -20,7 +20,6 @@ namespace Frogs
         public int seconds;
         public int time;
 
-
         Player1 player1;
         Player2 player2;
         Player3 player3;
@@ -117,7 +116,7 @@ namespace Frogs
             Form form;
             int position;
 
-            EndGame();
+            Pause();
 
             if (players == 1)
             {
@@ -165,6 +164,9 @@ namespace Frogs
                     MessageBox.Show("Draw!");
 
             }
+
+            Pause();
+            EndGame();
 
         }
 
@@ -422,6 +424,10 @@ namespace Frogs
             gametimer.Dispose();
             Invalidate(true);
             flies = null;
+            lblTime.Text = "0";
+            lblP1.Text = "0";
+            lblP2.Text = "0";
+            lblP3.Text = "0";
         }
 
         private void Form1_KeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
