@@ -9,6 +9,7 @@ namespace Frogs
     public static class Adjustments
     {
         public static int Ground = 430; // pixels
+        public static int FrogMovementSpeed = 7; // pixels per frame
         public static int JumpAngle = 70; // degrees
         public static int JumpVelocity = 23; // pixels per second
         public static int GravityAcceleration = 40; // pixels per second*second
@@ -48,7 +49,7 @@ namespace Frogs
 
         public static int NormalFlyPoints = 100; // points
         public static int WaspPoints = -150; // points
-        public static int GoldenFlyPoints = 300; // points
+        public static int GoldenFlyPoints = 250; // points
         public static int DragonFlyPoints = 150; // points
 
         public static int NormalFlyRadius = 17; // pixels

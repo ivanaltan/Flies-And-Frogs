@@ -57,6 +57,8 @@ namespace Frogs
             playing = false;
             pause = false;
             btnPause.Enabled = false;
+
+            ActiveControl = groupBox1;
         }
 
 
@@ -103,6 +105,7 @@ namespace Frogs
 
             flies.AddFly();
 
+            ActiveControl = groupBox1;
         }
 
         private void secondtimer_Tick(object sender, System.EventArgs e)

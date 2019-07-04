@@ -16,7 +16,7 @@ namespace Frogs
         public Point position;
         public Point center;
         public int radius;
-        public bool img;
+        public int img;
         public bool[] eaten;
         public int points;
         public int frames;
@@ -29,6 +29,8 @@ namespace Frogs
         public Image img2F;
         public Image img3;
         public Image img3F;
+        public Image img4;
+        public Image img4F;
 
         public Fly(Point position, int speed, int amplitude, int frequency, bool direction)
         {
@@ -45,7 +47,7 @@ namespace Frogs
 
             deadstate = 0;
             frames = 0;
-            img = false;
+            img = 1;
             eaten = new bool[4] { false, false, false, false };                   
         }
 
@@ -114,16 +116,10 @@ namespace Frogs
             if (deadstate > 0)
             {
                 if (direction)
-                {
                         g.DrawImageUnscaled(img3, position);
-                        img = false;
-                }
 
-                else
-                {     
+                else    
                         g.DrawImageUnscaled(img3F, position);
-                        img = false;
-                }
 
                 deadstate++;
                 return;
@@ -132,29 +128,39 @@ namespace Frogs
 
             if (direction)
             {
-                if (img)
+                if (img==1)
                 {
                     g.DrawImageUnscaled(img1, position);
-                    img = false;
+                    img = 4;
+                }
+                else if (img==4)
+                {
+                    g.DrawImageUnscaled(img4, position);
+                    img = 2;
                 }
                 else
                 {
                     g.DrawImageUnscaled(img2, position);
-                    img = true;
+                    img = 1;
                 }
             }
 
             else
             {
-                if (img)
+                if (img == 1)
                 {
                     g.DrawImageUnscaled(img1F, position);
-                    img = false;
+                    img = 4;
+                }
+                else if (img == 4)
+                {
+                    g.DrawImageUnscaled(img4F, position);
+                    img = 2;
                 }
                 else
                 {
                     g.DrawImageUnscaled(img2F, position);
-                    img = true;
+                    img = 1;
                 }
             }
         }

@@ -121,11 +121,11 @@ namespace Frogs
 
                 if (direction)
                 {
-                    UpdatePosition(7, 0);
+                    UpdatePosition(Adjustments.FrogMovementSpeed, 0);
                 }
                 else
                 {
-                    UpdatePosition(-7, 0);
+                    UpdatePosition(-Adjustments.FrogMovementSpeed, 0);
                 }
 
                 moving = true;

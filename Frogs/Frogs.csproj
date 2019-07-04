@@ -226,5 +226,17 @@
   <ItemGroup>
     <None Include="Resources\wasp.3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dragonfly.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fly.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goldenfly.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wasp.4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
