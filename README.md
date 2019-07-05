@@ -10,7 +10,7 @@
 
 [Frog Pond 2 Players Gameplay](https://youtu.be/bv3XZwUw9eE)
 
-### Frogs And Flies - Atari 2600 - Инспирација - gameplay video
+### Frogs And Flies - Atari 2600 - gameplay video
 
 [Frogs And Flies Gameplay](https://youtu.be/gPxZsW7lslY)
 
