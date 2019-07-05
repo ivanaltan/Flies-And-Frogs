@@ -18,9 +18,9 @@
 
 [Документација .pdf](Documentation.pdf)
 
-[Документација .docx (download)] (https://github.com/downloads/Frog-Pond/repository/Documentation.docx)
+[Документација .docx (download)](https://github.com/ivanaltan/Frog-Pond/raw/master/Documentation.docx)
 
-[Пример oпис на имплементирана класа] (EXAMPLE.md)
+[Пример oпис на имплементирана класа](EXAMPLE.md)
 
 
 
