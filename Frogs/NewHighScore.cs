@@ -16,6 +16,9 @@ namespace Frogs
         public NewHighScore(int points, int position)
         {
             InitializeComponent();
+            MaximizeBox = false;
+            MinimizeBox = false;
+
             lblPoints.Text = "Points:     " + points;
             lblPosition.Text = "Position:     " + position;
             name = "Unnamed";

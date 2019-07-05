@@ -19,6 +19,9 @@ namespace Frogs
             this.c = c;
             TextBoxes();
 
+            MaximizeBox = false;
+            MinimizeBox = false;
+
         }
 
         private void TextBoxes() {

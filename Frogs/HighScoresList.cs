@@ -15,6 +15,9 @@ namespace Frogs
         public HighScoresList(HighScores hs)
         {
             InitializeComponent();
+            MaximizeBox = false;
+            MinimizeBox = false;
+
             lbl1.Text = "1.     " + hs.scores[0].GetName() + "           " + hs.scores[0].GetPoints();
             lbl2.Text = "2.     " + hs.scores[1].GetName() + "           " + hs.scores[1].GetPoints();
             lbl3.Text = "3.     " + hs.scores[2].GetName() + "           " + hs.scores[2].GetPoints();

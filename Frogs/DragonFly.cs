@@ -17,15 +17,15 @@ namespace Frogs
             img1 = Properties.Resources.dragonfly_1;
             img2 = Properties.Resources.dragonfly_2;
             img3 = Properties.Resources.dragonfly_3;
-            img4 = Properties.Resources.dragonfly_4;
+            imgdead = Properties.Resources.dragonfly_dead;
             img1F = Properties.Resources.dragonfly_1;
             img1F.RotateFlip(RotateFlipType.RotateNoneFlipX);
             img2F = Properties.Resources.dragonfly_2;
             img2F.RotateFlip(RotateFlipType.RotateNoneFlipX);
             img3F = Properties.Resources.dragonfly_3;
             img3F.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            img4F = Properties.Resources.dragonfly_4;
-            img4F.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            imgdeadF = Properties.Resources.dragonfly_dead;
+            imgdeadF.RotateFlip(RotateFlipType.RotateNoneFlipX);
         }
 
          public override void Move()

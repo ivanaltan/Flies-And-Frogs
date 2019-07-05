@@ -15,6 +15,9 @@ namespace Frogs
         public NotHighScore(int points)
         {
             InitializeComponent();
+            MaximizeBox = false;
+            MinimizeBox = false;
+
             lblPoints.Text = "Points:   "+points.ToString();
         }
     }

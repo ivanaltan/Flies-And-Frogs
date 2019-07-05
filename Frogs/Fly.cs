@@ -29,8 +29,8 @@ namespace Frogs
         public Image img2F;
         public Image img3;
         public Image img3F;
-        public Image img4;
-        public Image img4F;
+        public Image imgdead;
+        public Image imgdeadF;
 
         public Fly(Point position, int speed, int amplitude, int frequency, bool direction)
         {
@@ -40,8 +40,8 @@ namespace Frogs
             this.frequency = frequency;
             this.direction = direction;
 
-            this.center.X = position.X + radius;
-            this.center.Y = position.Y + radius;
+            center.X = position.X + radius;
+            center.Y = position.Y + radius;
 
             firsty = position.Y;
 
@@ -116,10 +116,10 @@ namespace Frogs
             if (deadstate > 0)
             {
                 if (direction)
-                        g.DrawImageUnscaled(img3, position);
+                        g.DrawImageUnscaled(imgdead, position);
 
                 else    
-                        g.DrawImageUnscaled(img3F, position);
+                        g.DrawImageUnscaled(imgdeadF, position);
 
                 deadstate++;
                 return;
@@ -135,15 +135,15 @@ namespace Frogs
                         img++;
                         break;
                     case 2:
-                        g.DrawImageUnscaled(img4, position);
-                        img++;
-                        break;
-                    case 3:
                         g.DrawImageUnscaled(img2, position);
                         img++;
                         break;
+                    case 3:
+                        g.DrawImageUnscaled(img3, position);
+                        img++;
+                        break;
                     case 4:
-                        g.DrawImageUnscaled(img4, position);
+                        g.DrawImageUnscaled(img2, position);
                         img=1;
                         break;
                 }             
@@ -158,15 +158,15 @@ namespace Frogs
                         img++;
                         break;
                     case 2:
-                        g.DrawImageUnscaled(img4F, position);
-                        img++;
-                        break;
-                    case 3:
                         g.DrawImageUnscaled(img2F, position);
                         img++;
                         break;
+                    case 3:
+                        g.DrawImageUnscaled(img3F, position);
+                        img++;
+                        break;
                     case 4:
-                        g.DrawImageUnscaled(img4F, position);
+                        g.DrawImageUnscaled(img2F, position);
                         img = 1;
                         break;
                 }

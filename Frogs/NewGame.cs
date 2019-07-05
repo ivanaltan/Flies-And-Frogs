@@ -18,6 +18,9 @@ namespace Frogs
         public NewGame()
         {
             InitializeComponent();
+            MaximizeBox = false;
+            MinimizeBox = false;
+
             players = 1;
             time = 90;
             memtime = "90";
@@ -25,9 +28,15 @@ namespace Frogs
             tbTime.Enabled = false;
         }
 
-        private void radio1P_CheckedChanged(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
-            if(radio1P.Checked==true)
+            time = int.Parse(tbTime.Text);
+            if (time < 10) time = 10;
+        }
+
+        private void CheckChecked()
+        {
+            if (radio1P.Checked == true)
             {
                 players = 1;
                 memtime = tbTime.Text;
@@ -35,7 +44,7 @@ namespace Frogs
                 tbTime.Enabled = false;
             }
 
-            else if (radio2P.Checked==true)
+            else if (radio2P.Checked == true)
             {
                 players = 2;
                 tbTime.Text = memtime;
@@ -50,18 +59,27 @@ namespace Frogs
             }
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            time = int.Parse(tbTime.Text);
-            if (time < 10) time = 10;
-        }
-
         private void tbTime_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
+        }
+
+        private void radio1P_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckChecked();
+        }
+
+        private void radio2P_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckChecked();
+        }
+
+        private void radio3P_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckChecked();
         }
     }
 }

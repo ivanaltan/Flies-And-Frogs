@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Frogs
 {
-    class Player1 : Frog
+    public class Player1 : Frog
     {
 
         public Player1(FliesCollection flies) : base(flies)

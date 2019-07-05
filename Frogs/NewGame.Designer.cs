@@ -93,6 +93,7 @@
             this.radio2P.TabIndex = 13;
             this.radio2P.Text = "2 players (battle)";
             this.radio2P.UseVisualStyleBackColor = true;
+            this.radio2P.CheckedChanged += new System.EventHandler(this.radio2P_CheckedChanged);
             // 
             // btnCancel
             // 
@@ -123,6 +124,7 @@
             this.radio3P.TabIndex = 14;
             this.radio3P.Text = "3 players (battle)";
             this.radio3P.UseVisualStyleBackColor = true;
+            this.radio3P.CheckedChanged += new System.EventHandler(this.radio3P_CheckedChanged);
             // 
             // tbTime
             // 

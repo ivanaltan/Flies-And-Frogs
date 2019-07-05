@@ -20,9 +20,9 @@ namespace Frogs
         public int seconds;
         public int time;
 
-        Player1 player1;
-        Player2 player2;
-        Player3 player3;
+        public Player1 player1;
+        public Player2 player2;
+        public Player3 player3;
 
         Image logoimage;
         Image background;
@@ -39,14 +39,15 @@ namespace Frogs
 
         public Form1()
         {
+            InitializeComponent();
+            MaximizeBox = false;
+
             logoimage = Properties.Resources.logo;
             background = Properties.Resources.background;
             backgroundidle = Properties.Resources.background_idle;
             image = new Bitmap(background);
             imageidle = new Bitmap(backgroundidle);
 
-
-            InitializeComponent();
             DoubleBuffered = true;
             KeyPreview = true;
             info = new GameFile();
@@ -142,31 +143,32 @@ namespace Frogs
                 }
 
                 form = new HighScoresList(info.highscores);
-                form.ShowDialog();
             }
 
             else if (players == 2)
             {
                 if (player1.points > player2.points)
-                    MessageBox.Show("Player 1 wins!");
+                    form = new Winner(1, player1.img1);
                 else if (player1.points < player2.points)
-                    MessageBox.Show("Player 2 wins!");
+                    form = new Winner(2, player2.img1);
                 else
-                    MessageBox.Show("Draw!");
+                    form = new Winner(0, logoimage);
             }
 
             else
             {
                 if(player1.points>player2.points && player1.points>player3.points)
-                    MessageBox.Show("Player 1 wins!");
+                    form = new Winner(1, player1.img1);
                 else if(player2.points>player1.points && player2.points>player3.points)
-                    MessageBox.Show("Player 2 wins!");
+                    form = new Winner(2, player2.img1);
                 else if (player3.points > player1.points && player3.points > player2.points)
-                    MessageBox.Show("Player 3 wins!");
+                    form = new Winner(3, player3.img1);
                 else
-                    MessageBox.Show("Draw!");
+                    form = new Winner(0, logoimage);
 
             }
+
+            form.ShowDialog();
 
             Pause();
             EndGame();

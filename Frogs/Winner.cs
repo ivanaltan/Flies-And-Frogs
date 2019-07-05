@@ -10,13 +10,24 @@ using System.Windows.Forms;
 
 namespace Frogs
 {
-    public partial class GameEnd : Form
+    public partial class Winner : Form
     {
-        public GameEnd()
+        int id;
+        Image img;
+
+        public Winner(int id, Image img)
         {
             InitializeComponent();
             MaximizeBox = false;
             MinimizeBox = false;
+
+            pictureBox1.Image = img;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            if (id != 0)
+                lbl.Text = "Player " + id + " Wins!";
+            else
+                lbl.Text = "      Draw!     ";
         }
     }
 }

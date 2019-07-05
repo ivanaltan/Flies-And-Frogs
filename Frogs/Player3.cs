@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Frogs
 {
-    class Player3 : Frog
+    public class Player3 : Frog
     {
         public Player3(FliesCollection flies) : base(flies)
         {

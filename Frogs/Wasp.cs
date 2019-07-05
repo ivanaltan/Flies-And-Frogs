@@ -18,15 +18,15 @@ namespace Frogs
             img1 = Properties.Resources.wasp_1;
             img2 = Properties.Resources.wasp_2;
             img3 = Properties.Resources.wasp_3;
-            img4 = Properties.Resources.wasp_4;
+            imgdead = Properties.Resources.wasp_dead;
             img1F = Properties.Resources.wasp_1;
             img1F.RotateFlip(RotateFlipType.RotateNoneFlipX);
             img2F = Properties.Resources.wasp_2;
             img2F.RotateFlip(RotateFlipType.RotateNoneFlipX);
             img3F = Properties.Resources.wasp_3;
             img3F.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            img4F = Properties.Resources.wasp_4;
-            img4F.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            imgdeadF = Properties.Resources.wasp_dead;
+            imgdeadF.RotateFlip(RotateFlipType.RotateNoneFlipX);
         }
 
     }

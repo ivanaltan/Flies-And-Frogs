@@ -113,9 +113,9 @@ namespace Frogs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dragonfly_4 {
+        internal static System.Drawing.Bitmap dragonfly_dead {
             get {
-                object obj = ResourceManager.GetObject("dragonfly_4", resourceCulture);
+                object obj = ResourceManager.GetObject("dragonfly_dead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Frogs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fly_4 {
+        internal static System.Drawing.Bitmap fly_dead {
             get {
-                object obj = ResourceManager.GetObject("fly_4", resourceCulture);
+                object obj = ResourceManager.GetObject("fly_dead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +283,9 @@ namespace Frogs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap goldenfly_4 {
+        internal static System.Drawing.Bitmap goldenfly_dead {
             get {
-                object obj = ResourceManager.GetObject("goldenfly_4", resourceCulture);
+                object obj = ResourceManager.GetObject("goldenfly_dead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace Frogs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wasp_4 {
+        internal static System.Drawing.Bitmap wasp_dead {
             get {
-                object obj = ResourceManager.GetObject("wasp_4", resourceCulture);
+                object obj = ResourceManager.GetObject("wasp_dead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
