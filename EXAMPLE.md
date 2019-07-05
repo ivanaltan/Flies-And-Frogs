@@ -1,5 +1,6 @@
-#
+# Опис на класата Frog
 
+```
 public class Fly
     {
         public int speed;
@@ -7,14 +8,27 @@ public class Fly
         public int frequency;
         public bool direction;
         public Point position;
+```
+Полиња со податоци за позицијата и движењето на инсектот
+
+```
+        
         public Point center;
         public int radius;
+```
+Полиња кои помагаат при детектирањето на колизии со јазикот на жаба
+
+```
         public int img;
+```
+
         public bool[] eaten;
         public int points;
         public int frames;
         public int deadstate;
         public int firsty;
+```
+
 
         public Image img1;
         public Image img2;
