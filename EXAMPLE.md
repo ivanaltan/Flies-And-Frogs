@@ -1,4 +1,4 @@
-# Опис на класата Frog
+# Опис на класата Fly
 
 ```
 public class Fly
@@ -9,19 +9,33 @@ public class Fly
         public bool direction;
         public Point position;
 ```
-Полиња со податоци за позицијата и движењето на инсектот
+Полиња со податоци за позицијата и движењето на инсектот.
 
 ```
         
         public Point center;
         public int radius;
 ```
-Полиња кои помагаат при детектирањето на колизии со јазикот на жаба
+Полиња кои помагаат при детектирањето на колизии со јазикот на жаба.
+
+```     
+        public Image img1;
+        public Image img2;
+        public Image img1F;
+        public Image img2F;
+        public Image img3;
+        public Image img3F;
+        public Image imgdead;
+        public Image imgdeadF;  
+```
+Полиња од слики кои се користат за креирање на анимациите за летот на инсектот.
 
 ```
-        public int img;
+public int img;
 ```
+Поле кое го содржи бројот на сликата што последна се прикажала. Се користи за менување на сликата на инсектот.
 
+```
         public bool[] eaten;
         public int points;
         public int frames;
@@ -30,14 +44,7 @@ public class Fly
 ```
 
 
-        public Image img1;
-        public Image img2;
-        public Image img1F;
-        public Image img2F;
-        public Image img3;
-        public Image img3F;
-        public Image imgdead;
-        public Image imgdeadF;
+        
 
         public Fly(Point position, int speed, int amplitude, int frequency, bool direction)
         {
