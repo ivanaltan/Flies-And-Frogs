@@ -1,0 +1,17 @@
+D:\GitHub\Frogs_VP\Frog Pond\bin\Debug\Frogs.exe.config
+D:\GitHub\Frogs_VP\Frog Pond\bin\Debug\Frogs.exe
+D:\GitHub\Frogs_VP\Frog Pond\bin\Debug\Frogs.pdb
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frog Pond.csprojAssemblyReference.cache
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.ControlsConfiguration.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.Form1.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.GameEnd.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.HighScoresList.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.NewGame.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.NewHighScore.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.NotHighScore.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.Properties.Resources.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.Winner.resources
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frog Pond.csproj.GenerateResource.cache
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frog Pond.csproj.CoreCompileInputs.cache
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.exe
+D:\GitHub\Frogs_VP\Frog Pond\obj\Debug\Frogs.pdb

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Frogs
 {
-    public class Frog
+    public virtual class Frog
     {
 
         public Point position;
